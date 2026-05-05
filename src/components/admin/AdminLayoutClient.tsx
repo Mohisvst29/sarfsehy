@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { useState } from "react";
 
 export default function AdminLayoutClient({ children }: { children: React.ReactNode }) {
@@ -10,6 +10,17 @@ export default function AdminLayoutClient({ children }: { children: React.ReactN
   const [isNewRequestModalOpen, setIsNewRequestModalOpen] = useState(false);
   const [isSettingsOpen, setIsSettingsOpen] = useState(false);
   const [isNotificationsOpen, setIsNotificationsOpen] = useState(false);
+  const router = useRouter();
+
+  const handleLogout = async () => {
+    try {
+      await fetch("/api/logout", { method: "POST" });
+      router.push("/login");
+      router.refresh();
+    } catch (e) {
+      console.error(e);
+    }
+  };
 
   const navLinks = [
     { href: "/admin", icon: "dashboard", label: "نظرة عامة" },
@@ -82,10 +93,10 @@ export default function AdminLayoutClient({ children }: { children: React.ReactN
             <span className="material-symbols-outlined">verified_user</span>
             <span className="font-label-bold text-label-bold">بروتوكولات السلامة</span>
           </Link>
-          <Link href="/" className="text-on-surface-variant hover:text-primary flex items-center gap-3 px-4 py-2 transition-all hover:bg-surface-container-high rounded-lg">
+          <button onClick={handleLogout} className="text-on-surface-variant hover:text-primary flex items-center gap-3 px-4 py-2 transition-all hover:bg-surface-container-high rounded-lg w-full text-right">
             <span className="material-symbols-outlined text-error">logout</span>
             <span className="font-label-bold text-label-bold text-error">تسجيل الخروج</span>
-          </Link>
+          </button>
         </div>
       </aside>
 
