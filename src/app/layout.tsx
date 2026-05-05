@@ -28,8 +28,18 @@ export default async function RootLayout({
         <style dangerouslySetInnerHTML={{
           __html: `
             :root {
-              ${settings.primaryColor ? `--color-primary: ${settings.primaryColor};` : ''}
-              ${settings.secondaryColor ? `--color-secondary: ${settings.secondaryColor};` : ''}
+              ${settings.primaryColor ? `
+                --color-primary: ${settings.primaryColor};
+                --color-primary-container: ${settings.primaryColor};
+                --color-on-primary: #ffffff;
+                --color-on-primary-container: #ffffff;
+              ` : ''}
+              ${settings.secondaryColor ? `
+                --color-secondary: ${settings.secondaryColor};
+                --color-secondary-container: ${settings.secondaryColor};
+                --color-on-secondary: #ffffff;
+                --color-on-secondary-container: #ffffff;
+              ` : ''}
             }
           `
         }} />
