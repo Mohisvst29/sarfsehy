@@ -33,18 +33,18 @@ export async function getServices() {
   if (services.length === 0) {
     // Seed initial 9 services
     const initialServices = [
-      { title: "شفط البيارات", desc: "شفط البيارات بجميع الأحجام (فلل – عمائر – شركات) باستخدام وايتات حديثة بسعات مختلفة.", icon: "local_shipping", order: 1 },
-      { title: "تسليك المجاري بالضغط", desc: "استخدام ضغط الماء والهواء لتفتيت الدهون وتنظيف المواسير بالكامل بدون تكسير.", icon: "water_damage", order: 2 },
-      { title: "تنظيف وتعقيم البيارات", desc: "إزالة الرواسب من قاع البيارة ورش مواد تعقيم قوية للقضاء على الروائح والحشرات.", icon: "sanitizer", order: 3 },
-      { title: "فتح الانسدادات الصعبة", desc: "معالجة انسداد غرف التفتيش والمناهيل وحل مشاكل التصريف البطيء.", icon: "plumbing", order: 4 },
-      { title: "صيانة وترميم البيارات", desc: "فحص البيارات القديمة وإصلاح التسربات لحماية أساسات المباني من الضرر.", icon: "engineering", order: 5 },
-      { title: "تسليك وتنظيف شبكات الصرف", desc: "إزالة الدهون والترسبات من المواسير وتحسين تدفق المياه.", icon: "waves", order: 6 },
-      { title: "شفط مياه الصرف", desc: "التعامل مع المياه المتراكمة في المطاعم، الأقبية، والخزانات.", icon: "water_drop", order: 7 },
-      { title: "خدمات وقائية", desc: "استخدام مواد كيميائية لإذابة الدهون، مكافحة الحشرات، ومنع تكرار الانسداد.", icon: "pest_control", order: 8 },
-      { title: "خدمة طوارئ 24 ساعة", desc: "استجابة سريعة في أي وقت لتغطية جميع أحياء الرياض.", icon: "e911_emergency", order: 9 },
+      { title: "شفط البيارات", description: "شفط البيارات بجميع الأحجام (فلل – عمائر – شركات) باستخدام وايتات حديثة بسعات مختلفة.", icon: "local_shipping", order: 1 },
+      { title: "تسليك المجاري بالضغط", description: "استخدام ضغط الماء والهواء لتفتيت الدهون وتنظيف المواسير بالكامل بدون تكسير.", icon: "water_damage", order: 2 },
+      { title: "تنظيف وتعقيم البيارات", description: "إزالة الرواسب من قاع البيارة ورش مواد تعقيم قوية للقضاء على الروائح والحشرات.", icon: "sanitizer", order: 3 },
+      { title: "فتح الانسدادات الصعبة", description: "معالجة انسداد غرف التفتيش والمناهيل وحل مشاكل التصريف البطيء.", icon: "plumbing", order: 4 },
+      { title: "صيانة وترميم البيارات", description: "فحص البيارات القديمة وإصلاح التسربات لحماية أساسات المباني من الضرر.", icon: "engineering", order: 5 },
+      { title: "تسليك وتنظيف شبكات الصرف", description: "إزالة الدهون والترسبات من المواسير وتحسين تدفق المياه.", icon: "waves", order: 6 },
+      { title: "شفط مياه الصرف", description: "التعامل مع المياه المتراكمة في المطاعم، الأقبية، والخزانات.", icon: "water_drop", order: 7 },
+      { title: "خدمات وقائية", description: "استخدام مواد كيميائية لإذابة الدهون، مكافحة الحشرات، ومنع تكرار الانسداد.", icon: "pest_control", order: 8 },
+      { title: "خدمة طوارئ 24 ساعة", description: "استجابة سريعة في أي وقت لتغطية جميع أحياء الرياض.", icon: "e911_emergency", order: 9 },
     ];
     await Service.insertMany(initialServices);
-    return initialServices;
+    return JSON.parse(JSON.stringify(initialServices));
   }
   return JSON.parse(JSON.stringify(services));
 }
