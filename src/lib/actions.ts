@@ -67,6 +67,14 @@ export async function deleteService(id: string) {
   return { success: true };
 }
 
+export async function updateService(id: string, data: any) {
+  await dbConnect();
+  const updatedService = await Service.findByIdAndUpdate(id, data, { new: true });
+  revalidatePath("/admin/services");
+  revalidatePath("/services");
+  return JSON.parse(JSON.stringify(updatedService));
+}
+
 // --- Posts Actions ---
 export async function getPosts() {
   await dbConnect();
