@@ -20,9 +20,7 @@ export async function getSettings() {
 export async function updateSettings(data: any) {
   await dbConnect();
   await Settings.findOneAndUpdate({}, data, { upsert: true, new: true });
-  revalidatePath("/");
-  revalidatePath("/admin/home-settings");
-  revalidatePath("/admin/contact-settings");
+  revalidatePath("/", "layout");
   return { success: true };
 }
 
@@ -54,24 +52,21 @@ export async function addService(data: any) {
   const count = await Service.countDocuments();
   data.order = count + 1;
   const newService = await Service.create(data);
-  revalidatePath("/admin/services");
-  revalidatePath("/services");
+  revalidatePath("/", "layout");
   return JSON.parse(JSON.stringify(newService));
 }
 
 export async function deleteService(id: string) {
   await dbConnect();
   await Service.findByIdAndDelete(id);
-  revalidatePath("/admin/services");
-  revalidatePath("/services");
+  revalidatePath("/", "layout");
   return { success: true };
 }
 
 export async function updateService(id: string, data: any) {
   await dbConnect();
   const updatedService = await Service.findByIdAndUpdate(id, data, { new: true });
-  revalidatePath("/admin/services");
-  revalidatePath("/services");
+  revalidatePath("/", "layout");
   return JSON.parse(JSON.stringify(updatedService));
 }
 
@@ -112,24 +107,21 @@ export async function getPosts() {
 export async function addPost(data: any) {
   await dbConnect();
   const newPost = await Post.create(data);
-  revalidatePath("/admin/blog");
-  revalidatePath("/blog");
+  revalidatePath("/", "layout");
   return JSON.parse(JSON.stringify(newPost));
 }
 
 export async function updatePost(id: string, data: any) {
   await dbConnect();
   const updatedPost = await Post.findByIdAndUpdate(id, data, { new: true });
-  revalidatePath("/admin/blog");
-  revalidatePath("/blog");
+  revalidatePath("/", "layout");
   return JSON.parse(JSON.stringify(updatedPost));
 }
 
 export async function deletePost(id: string) {
   await dbConnect();
   await Post.findByIdAndDelete(id);
-  revalidatePath("/admin/blog");
-  revalidatePath("/blog");
+  revalidatePath("/", "layout");
   return { success: true };
 }
 
