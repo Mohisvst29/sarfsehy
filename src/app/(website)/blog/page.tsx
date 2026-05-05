@@ -4,6 +4,21 @@ import { getPosts } from "@/lib/actions";
 
 export const dynamic = "force-dynamic";
 
+export const metadata = {
+  title: "المدونة - بيارات الرياض",
+  description: "اكتشف مقالات تعليمية ونصائح احترافية حول صيانة الصرف الصحي والمحافظة على سلامة منزلك في الرياض مقدمة من خبراء بيارات الرياض.",
+  openGraph: {
+    title: "المدونة - بيارات الرياض",
+    description: "اكتشف مقالات تعليمية ونصائح احترافية حول صيانة الصرف الصحي والمحافظة على سلامة منزلك في الرياض مقدمة من خبراء بيارات الرياض.",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "المدونة - بيارات الرياض",
+    description: "اكتشف مقالات تعليمية ونصائح احترافية حول صيانة الصرف الصحي والمحافظة على سلامة منزلك في الرياض مقدمة من خبراء بيارات الرياض.",
+  }
+};
+
 export default async function Blog() {
   const posts = await getPosts();
   
@@ -11,8 +26,38 @@ export default async function Blog() {
   const featuredPost = posts.length > 0 ? posts[0] : null;
   const gridPosts = posts.length > 1 ? posts.slice(1) : [];
 
+  // Construct JSON-LD Schema for SEO
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Blog",
+    "name": "مدونة بيارات الرياض",
+    "description": "مدونة بيارات الرياض: نصائح وحلول لبيئة أنظف وصيانة الصرف الصحي والمحافظة على سلامة منزلك في الرياض.",
+    "url": "https://darub-alqimma.com/blog",
+    "publisher": {
+      "@type": "Organization",
+      "name": "بيارات الرياض",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://darub-alqimma.com/icon.svg"
+      }
+    },
+    "blogPost": posts.map((p: any) => ({
+      "@type": "BlogPosting",
+      "headline": p.title,
+      "datePublished": new Date(p.createdAt || Date.now()).toISOString(),
+      "dateModified": new Date(p.updatedAt || p.createdAt || Date.now()).toISOString(),
+      "description": p.excerpt,
+      "url": `https://darub-alqimma.com/blog/${p._id}`,
+      "image": p.image ? [p.image] : []
+    }))
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <main className="max-w-container-max mx-auto px-margin-mobile md:px-gutter">
         {/* Hero Section */}
         <section className="py-stack-lg text-center" data-aos="fade-up">

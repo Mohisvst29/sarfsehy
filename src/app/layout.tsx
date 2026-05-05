@@ -42,6 +42,53 @@ export default async function RootLayout({
   return (
     <html lang="ar" dir="rtl">
       <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "LocalBusiness",
+              "name": settings?.siteTitle || "بيارات الرياض",
+              "image": "https://darub-alqimma.com/icon.svg",
+              "@id": "https://darub-alqimma.com",
+              "url": "https://darub-alqimma.com",
+              "telephone": "+966583165533",
+              "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "الرياض",
+                "addressLocality": "الرياض",
+                "addressRegion": "الرياض",
+                "postalCode": "12211",
+                "addressCountry": "SA"
+              },
+              "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": 24.7136,
+                "longitude": 46.6753
+              },
+              "openingHoursSpecification": {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": [
+                  "Monday",
+                  "Tuesday",
+                  "Wednesday",
+                  "Thursday",
+                  "Friday",
+                  "Saturday",
+                  "Sunday"
+                ],
+                "opens": "00:00",
+                "closes": "23:59"
+              },
+              "sameAs": [
+                "https://twitter.com/darub-alqimma",
+                "https://facebook.com/darub-alqimma",
+                "https://instagram.com/darub-alqimma"
+              ],
+              "priceRange": "$$"
+            })
+          }}
+        />
         <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
         <style dangerouslySetInnerHTML={{
           __html: `

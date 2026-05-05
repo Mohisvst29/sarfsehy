@@ -11,10 +11,19 @@ export async function generateMetadata({ params }: { params: { id: string } }) {
   
   return {
     title: `${post.title} - بيارات الرياض`,
-    description: post.excerpt,
+    description: post.excerpt || "مقال مفصل من بيارات الرياض المتخصصة في خدمات الصرف الصحي.",
     openGraph: {
-      title: post.title,
-      description: post.excerpt,
+      title: `${post.title} - بيارات الرياض`,
+      description: post.excerpt || "مقال مفصل من بيارات الرياض المتخصصة في خدمات الصرف الصحي.",
+      images: post.image ? [post.image] : [],
+      type: "article",
+      publishedTime: new Date(post.createdAt || Date.now()).toISOString(),
+      authors: ["بيارات الرياض"],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${post.title} - بيارات الرياض`,
+      description: post.excerpt || "مقال مفصل من بيارات الرياض المتخصصة في خدمات الصرف الصحي.",
       images: post.image ? [post.image] : [],
     }
   };
@@ -31,8 +40,36 @@ export default async function BlogPost({ params }: { params: { id: string } }) {
   const allPosts = await getPosts();
   const recentPosts = allPosts.filter((p: any) => p._id.toString() !== post._id.toString()).slice(0, 4);
 
+  // Construct JSON-LD Schema for SEO
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": post.title,
+    "description": post.excerpt,
+    "image": post.image ? [post.image] : [],
+    "datePublished": new Date(post.createdAt || Date.now()).toISOString(),
+    "dateModified": new Date(post.updatedAt || post.createdAt || Date.now()).toISOString(),
+    "author": [{
+        "@type": "Organization",
+        "name": "بيارات الرياض",
+        "url": "https://darub-alqimma.com"
+    }],
+    "publisher": {
+      "@type": "Organization",
+      "name": "بيارات الرياض",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://darub-alqimma.com/icon.svg"
+      }
+    }
+  };
+
   return (
     <main className="max-w-7xl mx-auto px-8 py-16">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
         {/* Main Content */}
         <div className="lg:col-span-2 space-y-8">
@@ -74,7 +111,7 @@ export default async function BlogPost({ params }: { params: { id: string } }) {
         {/* Sidebar */}
         <aside className="space-y-8">
           <div className="bg-surface-container-lowest border border-outline-variant rounded-xl p-6">
-            <h3 className="text-xl font-bold text-primary mb-4 border-b border-outline-variant pb-2">مقالات ذات صلة</h3>
+            <h2 className="text-xl font-bold text-primary mb-4 border-b border-outline-variant pb-2">مقالات ذات صلة</h2>
             <div className="space-y-4">
               {recentPosts.length > 0 ? recentPosts.map((p: any) => (
                 <Link href={`/blog/${p._id}`} key={p._id} className="flex gap-4 group">
@@ -82,7 +119,7 @@ export default async function BlogPost({ params }: { params: { id: string } }) {
                     <img src={p.image || "https://lh3.googleusercontent.com/aida-public/AB6AXuAx88XBNpoHmloeR3p8IhfSCn8nLXAPc74leqKmTUGLTM6Um1IPxG1NYf_6wrE-rQDAY21pexoca6LlsU-Sx3YGHlvK7zwT8DrGpgw7Jv-YwNlXaHv9aUZI0D4FY_dvn2tINJgSww03TxOWeWFjnHtif7T0sQuj4wOKrwtoRD7rbj1ydACPG4Icopwdg6H70S2h1ctEXZybMUKf8PxGKQRhxgxaQdkT7Ifkd5BG4R4m7XFwjooyeouUFEVXjKRrNBdQuFL0WmcWe-DN"} alt={p.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" />
                   </div>
                   <div>
-                    <h4 className="font-bold text-primary text-sm group-hover:text-secondary line-clamp-2">{p.title}</h4>
+                    <h3 className="font-bold text-primary text-sm group-hover:text-secondary line-clamp-2">{p.title}</h3>
                     <span className="text-xs text-on-surface-variant mt-1 block">{new Date(p.createdAt || Date.now()).toLocaleDateString("ar-EG")}</span>
                   </div>
                 </Link>
@@ -96,7 +133,7 @@ export default async function BlogPost({ params }: { params: { id: string } }) {
             <div className="absolute inset-0 bg-black/10"></div>
             <div className="relative z-10 space-y-4">
               <span className="material-symbols-outlined text-4xl text-secondary">support_agent</span>
-              <h3 className="text-xl font-bold">هل تحتاج لخدمة طوارئ؟</h3>
+              <h2 className="text-xl font-bold">هل تحتاج لخدمة طوارئ؟</h2>
               <p className="text-sm opacity-90">فريقنا مستعد لتلبية طلبك على مدار 24 ساعة في كافة أحياء الرياض.</p>
               <a href="tel:+966583165533" className="block w-full bg-secondary text-white py-3 rounded-lg font-bold hover:bg-secondary/90 transition-colors">اتصل بنا الآن</a>
             </div>
