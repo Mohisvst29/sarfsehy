@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+
+<html dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container-highest": "#d3e4fe",
+                    "secondary-fixed-dim": "#68dba9",
+                    "background": "#f8f9ff",
+                    "surface-container-low": "#eff4ff",
+                    "inverse-surface": "#213145",
+                    "tertiary-container": "#4b2d00",
+                    "surface-dim": "#cbdbf5",
+                    "on-error": "#ffffff",
+                    "tertiary-fixed": "#ffddb8",
+                    "primary": "#001e40",
+                    "primary-container": "#003366",
+                    "on-secondary": "#ffffff",
+                    "primary-fixed": "#d5e3ff",
+                    "on-error-container": "#93000a",
+                    "surface": "#f8f9ff",
+                    "inverse-on-surface": "#eaf1ff",
+                    "on-primary": "#ffffff",
+                    "outline-variant": "#c3c6d1",
+                    "on-surface-variant": "#43474f",
+                    "error": "#ba1a1a",
+                    "surface-container-lowest": "#ffffff",
+                    "secondary-fixed": "#85f8c4",
+                    "on-tertiary-fixed": "#2a1700",
+                    "on-background": "#0b1c30",
+                    "inverse-primary": "#a7c8ff",
+                    "primary-fixed-dim": "#a7c8ff",
+                    "on-tertiary-fixed-variant": "#653e00",
+                    "surface-container": "#e5eeff",
+                    "outline": "#737780",
+                    "on-primary-fixed": "#001b3c",
+                    "on-surface": "#0b1c30",
+                    "surface-bright": "#f8f9ff",
+                    "on-secondary-fixed-variant": "#005137",
+                    "on-primary-fixed-variant": "#1f477b",
+                    "on-tertiary-container": "#d98b00",
+                    "surface-container-high": "#dce9ff",
+                    "surface-variant": "#d3e4fe",
+                    "on-tertiary": "#ffffff",
+                    "tertiary-fixed-dim": "#ffb95f",
+                    "secondary-container": "#82f5c1",
+                    "on-secondary-fixed": "#002114",
+                    "on-secondary-container": "#00714e",
+                    "surface-tint": "#3a5f94",
+                    "secondary": "#006c4a",
+                    "tertiary": "#2e1a00"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "stack-md": "1.5rem",
+                    "stack-lg": "3rem",
+                    "container-max": "1280px",
+                    "margin-mobile": "1rem",
+                    "gutter": "1.5rem",
+                    "stack-sm": "0.5rem"
+            },
+            "fontFamily": {
+                    "cta": ["Public Sans"],
+                    "body-lg": ["Public Sans"],
+                    "headline-xl": ["Public Sans"],
+                    "body-md": ["Public Sans"],
+                    "headline-md": ["Public Sans"],
+                    "label-bold": ["Public Sans"],
+                    "headline-lg": ["Public Sans"]
+            },
+            "fontSize": {
+                    "cta": ["16px", {"lineHeight": "20px", "fontWeight": "600"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "headline-xl": ["48px", {"lineHeight": "56px", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "label-bold": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Public Sans', sans-serif; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .active-tab { border-bottom: 2px solid #001e40; padding-bottom: 0.25rem; }
+    </style>
+</head>
+<body class="bg-background text-on-background selection:bg-secondary-container">
+<!-- TopAppBar -->
+<header class="bg-surface docked full-width top-0 sticky z-50 border-b border-outline-variant">
+<div class="flex justify-between items-center w-full px-margin-mobile md:px-gutter max-w-container-max mx-auto h-20">
+<div class="flex items-center gap-stack-md">
+<span class="font-headline-md text-headline-md font-bold text-primary">RiyadhPro Suction</span>
+<nav class="hidden md:flex items-center gap-8 mr-12">
+<a class="text-on-surface-variant font-medium hover:text-secondary transition-colors duration-200" href="#">Services</a>
+<a class="text-on-surface-variant font-medium hover:text-secondary transition-colors duration-200" href="#">Emergency</a>
+<a class="text-primary border-b-2 border-primary pb-1 font-label-bold text-label-bold" href="#">Blog</a>
+<a class="text-on-surface-variant font-medium hover:text-secondary transition-colors duration-200" href="#">Safety</a>
+<a class="text-on-surface-variant font-medium hover:text-secondary transition-colors duration-200" href="#">Contact</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<button class="hidden md:flex items-center gap-2 bg-primary text-on-primary px-6 py-2 rounded-lg font-cta text-cta active:scale-95 transition-transform duration-100">
+<span class="material-symbols-outlined">phone_in_talk</span>
+                    Emergency Call
+                </button>
+<button class="md:hidden p-2 text-primary">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</div>
+</header>
+<main class="max-w-container-max mx-auto px-margin-mobile md:px-gutter">
+<!-- Hero Section -->
+<section class="py-stack-lg text-center">
+<h1 class="font-headline-xl text-headline-xl text-primary mb-stack-sm max-w-4xl mx-auto">مدونة دروب القمة: نصائح وحلول لبيئة أنظف</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">
+                اكتشف مقالات تعليمية ونصائح احترافية حول صيانة الصرف الصحي والمحافظة على سلامة منزلك في الرياض.
+            </p>
+</section>
+<!-- Featured Article -->
+<section class="mb-stack-lg">
+<article class="relative w-full h-[500px] rounded-xl overflow-hidden group">
+<img class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="A high-pressure water jetting truck parked on a modern Riyadh street under clear blue skies. The professional equipment is glossy and well-maintained, reflecting the bright desert sun. Technicians in high-visibility safety gear are methodically organizing industrial hoses. The composition is clean and professional, conveying reliability and infrastructure expertise." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAx88XBNpoHmloeR3p8IhfSCn8nLXAPc74leqKmTUGLTM6Um1IPxG1NYf_6wrE-rQDAY21pexoca6LlsU-Sx3YGHlvK7zwT8DrGpgw7Jv-YwNlXaHv9aUZI0D4FY_dvn2tINJgSww03TxOWeWFjnHtif7T0sQuj4wOKrwtoRD7rbj1ydACPG4Icopwdg6H70S2h1ctEXZybMUKf8PxGKQRhxgxaQdkT7Ifkd5BG4R4m7XFwjooyeouUFEVXjKRrNBdQuFL0WmcWe-DN"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/40 to-transparent"></div>
+<div class="absolute bottom-0 p-stack-lg text-on-primary w-full md:w-2/3">
+<span class="inline-block bg-secondary text-on-secondary px-3 py-1 rounded-full text-label-bold mb-4">أحدث المقالات</span>
+<h2 class="font-headline-lg text-headline-lg mb-4">الدليل الشامل لصيانة شبكات الصرف الصحي في المنشآت التجارية الكبرى</h2>
+<p class="font-body-md text-body-md mb-6 opacity-90">تعرف على أفضل الممارسات والجداول الزمنية الموصى بها من قبل خبراء دروب القمة لضمان استمرارية العمل دون أعطال مفاجئة.</p>
+<button class="bg-secondary-fixed text-on-secondary-fixed px-8 py-3 rounded-lg font-cta text-cta flex items-center gap-2 hover:bg-secondary-fixed-dim transition-colors active:scale-95">
+                        اقرأ المزيد
+                        <span class="material-symbols-outlined">arrow_back</span>
+</button>
+</div>
+</article>
+</section>
+<!-- Categories Filter -->
+<section class="mb-stack-md">
+<div class="flex flex-wrap items-center gap-4 border-b border-outline-variant pb-stack-sm">
+<button class="px-6 py-2 bg-primary text-on-primary rounded-full font-label-bold">الكل</button>
+<button class="px-6 py-2 text-on-surface-variant hover:bg-surface-container rounded-full font-label-bold transition-colors">نصائح الصيانة</button>
+<button class="px-6 py-2 text-on-surface-variant hover:bg-surface-container rounded-full font-label-bold transition-colors">الصحة العامة</button>
+<button class="px-6 py-2 text-on-surface-variant hover:bg-surface-container rounded-full font-label-bold transition-colors">البيئة</button>
+</div>
+</section>
+<!-- Article Grid -->
+<section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter mb-stack-lg">
+<!-- Card 1 -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl overflow-hidden hover:shadow-lg transition-shadow">
+<img class="w-full h-48 object-cover" data-alt="A close-up shot of a modern industrial kitchen drainage system being inspected by a professional plumber using a digital borescope camera. The setting is clean and metallic, with focused light hitting the tools. The image style is sharp and corporate, emphasizing technical precision and advanced diagnostic technology used in modern plumbing services." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC8_NWMC6jzuFob-VJYJzaJpZ-am7fWduu70Qpwyr99OvneEdmAR9ZPFbsUG4Y0jOIUKnNvutZhhg9pLqiHixdjO_q-C-SFqJj6L3l9zv5GveGKov3gdfc810ZfeNGx6mD9Y8q1yU8IcWIxgJJgkGTRXVrM8s-8P_Vfug52az_gQ_1Uf8tFKfSmER78JG69R-tjNfjMawZWrVYQ-k8ElxCy9w3Bi2A_uZopGG9xMCyaMGe5u7BMxQCY3eV3YK9KnyIwCAb9PGoalKWK"/>
+<div class="p-stack-md">
+<div class="flex justify-between items-center mb-3">
+<span class="text-secondary font-label-bold text-label-bold">نصائح الصيانة</span>
+<span class="text-on-surface-variant text-sm opacity-70">١٥ أكتوبر ٢٠٢٤</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-primary mb-2">كيف تتجنب انسداد البيارات في الشتاء؟</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-4 line-clamp-3">تعرف على الخطوات الاستباقية لحماية منزلك من مشاكل الصرف الصحي الناتجة عن مياه الأمطار والبرودة الشديدة في مدينة الرياض.</p>
+<button class="text-secondary font-cta text-cta flex items-center gap-1 hover:gap-3 transition-all">
+<span>اقرأ المزيد</span>
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl overflow-hidden hover:shadow-lg transition-shadow">
+<img class="w-full h-48 object-cover" data-alt="A large-scale industrial water filtration and cleaning setup for a residential rooftop tank in Riyadh. The sky is a warm sunset orange, casting a professional glow on the specialized suction hoses and cleaning equipment. The image highlights environmental safety and the rigorous cleaning standards maintained by municipality-licensed services." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCuKueJuTBsHm72f4uvUYNVjt_2iffSk8MlqVu0deAEiCOb_8hC5YZbyNdGCaAH_84XtdAVRhbfEqh4hqFMNcbcusA_EEs69NLCFFnv1y_V2f6gUjs0nZA8h437eXWiY-OJrEl1cK4ZCSnlDBIgqwU_ZAjl8JByMqTNOdy4fS0VfJi_OXTTSHSCMHOkSDQ3TVwIbebasg-aS-EaKEhA4Cgah_t2IMFdRq2Y8MhsEaN7TuDxgYMqUpAcgndPN0NT-i1zRRngqUwREFkd"/>
+<div class="p-stack-md">
+<div class="flex justify-between items-center mb-3">
+<span class="text-secondary font-label-bold text-label-bold">الصحة العامة</span>
+<span class="text-on-surface-variant text-sm opacity-70">١٢ أكتوبر ٢٠٢٤</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-primary mb-2">أهمية تنظيف خزانات المياه بشكل دوري</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-4 line-clamp-3">تأثير تراكم الرواسب على جودة مياه الشرب وصحتك العامة، وما هي المعايير الصحية التي نتبعها في تعقيم الخزانات الأرضية والعلوية.</p>
+<button class="text-secondary font-cta text-cta flex items-center gap-1 hover:gap-3 transition-all">
+<span>اقرأ المزيد</span>
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl overflow-hidden hover:shadow-lg transition-shadow">
+<img class="w-full h-48 object-cover" data-alt="An expansive construction site in Riyadh with heavy-duty excavation machinery working on deep infrastructure sewer lines. The lighting is bright mid-day sun, creating high-contrast shadows that define the structural depth of the project. The overall mood is one of industrial progress and expert engineering in civil works." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAr3avKqoHfbebsZy4qx38YOrrvG12wdsdhl2huqpnn1QwHIxbM_J3PWw2gEG5i_oQYbyx9UXiYQDWbIhFq57ZBXmfy0xX-jkDxid5_UQwRlELyqmU5Gh_c7o2FXA2FY982rep7s27eHnWfONqEe_4IU8ZhBD6-UkmPG5fQl84b8AX9V3Q7Kt4mym0-xtGCm8-yJEycQ6Vpqq8iDteaIVhS-RPN1WwUDcIUDqvLXmVl4s6AgERWUgd4qXNBu_5M6_pZ6O46lKl6Cr-b"/>
+<div class="p-stack-md">
+<div class="flex justify-between items-center mb-3">
+<span class="text-secondary font-label-bold text-label-bold">البيئة</span>
+<span class="text-on-surface-variant text-sm opacity-70">٨ أكتوبر ٢٠٢٤</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-primary mb-2">تقنيات الشفط الحديثة وحماية البيئة</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-4 line-clamp-3">كيف نساهم في تقليل البصمة الكربونية من خلال استخدام شاحنات شفط متطورة تمنع التسرب والروائح الكريهة في الأحياء السكنية.</p>
+<button class="text-secondary font-cta text-cta flex items-center gap-1 hover:gap-3 transition-all">
+<span>اقرأ المزيد</span>
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl overflow-hidden hover:shadow-lg transition-shadow">
+<img class="w-full h-48 object-cover" data-alt="A professional technician's hand holding a detailed plumbing blueprint and a tablet showing real-time sensor data from a residential pipe network. The background is a clean, minimalist home utility room. This image emphasizes the combination of traditional expertise and modern digital monitoring in plumbing maintenance." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAbvmS5Jc2jkJ2syIi63ePXi_gt2uyCXCsmo4PXne29_VcIrB45IVGmh-Cgqkni7qXS5FDmG1GWn-E4R7w-5UklSwWSiuuFZDDrxCg28RD8BjZVhzf_GEVb36zswouYiJvzNrCxS0psgW5-vHb4W3I_atb6-gs0fIgervGqpfgX1qtx5tdBcvz4-dInvZHsW5SW6ek5UYAHIWXbZyg0oj6L5j8u3cafDNTfDcCGqXQ6V53t0PVQdTYf7YUpAhPdmY0ZifJmKreV_d4Y"/>
+<div class="p-stack-md">
+<div class="flex justify-between items-center mb-3">
+<span class="text-secondary font-label-bold text-label-bold">نصائح الصيانة</span>
+<span class="text-on-surface-variant text-sm opacity-70">٥ أكتوبر ٢٠٢٤</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-primary mb-2">علامات تحذيرية لانسداد الأنابيب المخفية</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-4 line-clamp-3">لا تنتظر الكارثة! اكتشف الروائح والأصوات التي تشير إلى وجود مشكلة في شبكة الصرف قبل أن تتفاقم وتسبب أضراراً إنشائية.</p>
+<button class="text-secondary font-cta text-cta flex items-center gap-1 hover:gap-3 transition-all">
+<span>اقرأ المزيد</span>
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+</div>
+</div>
+<!-- Card 5 -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl overflow-hidden hover:shadow-lg transition-shadow">
+<img class="w-full h-48 object-cover" data-alt="Close-up of high-quality, durable plumbing fittings and valves organized neatly in a professional toolbox. The surfaces are metallic and polished, reflecting a cool white laboratory-style light. The aesthetic is extremely orderly and professional, symbolizing the 'Quality Materials' pillar of the RiyadhPro brand identity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDdCIIdIc5B6P1x7p_nVCNETMrUoZ-NHuTWnHsaW6zqNv9HvbcA4peajjY0aHxV3fJUiVlDSprNaxdmXvY-QVAZbx84j9H1SdrtzzuMIDNs9rc2J4k2IxeUgcR6dlAo6ifYQd_cHx-tKI519ayw6u548cIhk0UCKBtzINcp5YDzwlkdchKPFXbPDHHYMEFh38FKbw-Fch7Ujr_cnldNpAgD34xwFFprsKpIhFNnXX0EBTqtqLZ5YYIEmmiB1EAbrV-CdnvTBQiHSPJS"/>
+<div class="p-stack-md">
+<div class="flex justify-between items-center mb-3">
+<span class="text-secondary font-label-bold text-label-bold">البيئة</span>
+<span class="text-on-surface-variant text-sm opacity-70">١ أكتوبر ٢٠٢٤</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-primary mb-2">معايير التخلص من النفايات السائلة</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-4 line-clamp-3">التزام دروب القمة بالقوانين البيئية في الرياض وتوجيه النفايات لمحطات المعالجة المعتمدة لضمان استدامة الموارد المائية.</p>
+<button class="text-secondary font-cta text-cta flex items-center gap-1 hover:gap-3 transition-all">
+<span>اقرأ المزيد</span>
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+</div>
+</div>
+<!-- Card 6 -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl overflow-hidden hover:shadow-lg transition-shadow">
+<img class="w-full h-48 object-cover" data-alt="A professional plumbing technician wearing a branded uniform and protective gloves, precisely adjusting a high-pressure valve on a large water manifold. The background is a clean, organized mechanical room with industrial pipes. The lighting is bright and even, reinforcing the calm and expert professional tone of the RiyadhPro service team." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDbVdpWHAdArJ6HVPAvlz19aLrGVZjgP_fnGTUNUHsFxi-_eBxsfKDrTbX7HdKID88guExw1RFHq8qCCP0MTXTJl5COr6xC2bmtOBejiou98S7RUWe_AJydHN3D3eIsdiccVMYiabbQOMB622AL_9CYelbmbqCeYTfGJsB0p9vDIiAUaMxrc53MaGdyIa2c_-mAFpOGlBfCIGnQ00A_Wjc5s0tXc57IppBMYohk-SvIRSKLRRjm-774KIqJQxwH42x7THJF3CX1xDm5"/>
+<div class="p-stack-md">
+<div class="flex justify-between items-center mb-3">
+<span class="text-secondary font-label-bold text-label-bold">نصائح الصيانة</span>
+<span class="text-on-surface-variant text-sm opacity-70">٢٨ سبتمبر ٢٠٢٤</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-primary mb-2">تجهيز منزلك الجديد بنظام صرف مثالي</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-4 line-clamp-3">نصائح للمقبلين على البناء حول كيفية اختيار أقطار الأنابيب ومواقع غرف التفتيش لتسهيل عمليات الصيانة المستقبلية.</p>
+<button class="text-secondary font-cta text-cta flex items-center gap-1 hover:gap-3 transition-all">
+<span>اقرأ المزيد</span>
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="bg-primary-container rounded-2xl p-stack-lg text-center mb-stack-lg border border-primary relative overflow-hidden">
+<div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-10"></div>
+<div class="relative z-10">
+<h2 class="font-headline-lg text-headline-lg text-on-primary mb-4">هل تحتاج إلى مساعدة فورية؟</h2>
+<p class="font-body-lg text-body-lg text-on-primary-container mb-8 max-w-xl mx-auto">فريق الطوارئ متاح على مدار الساعة للتعامل مع كافة مشاكل الصرف الصحي والفيضانات في الرياض.</p>
+<div class="flex flex-col md:flex-row justify-center gap-4">
+<a class="inline-flex items-center justify-center gap-3 bg-secondary-fixed text-on-secondary-fixed px-10 py-4 rounded-xl font-cta text-cta hover:bg-secondary-fixed-dim transition-colors group" href="tel:+966500000000">
+<span class="material-symbols-outlined group-hover:animate-pulse">phone_in_talk</span>
+                        اتصل الآن للطوارئ
+                    </a>
+<button class="inline-flex items-center justify-center gap-3 border-2 border-on-primary text-on-primary px-10 py-4 rounded-xl font-cta text-cta hover:bg-on-primary/10 transition-colors">
+                        طلب تسعيرة صيانة
+                    </button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-primary full-width mt-stack-lg">
+<div class="w-full py-stack-lg px-margin-mobile md:px-gutter max-w-container-max mx-auto flex flex-col md:flex-row justify-between items-start gap-gutter">
+<div class="flex flex-col gap-4 max-w-sm">
+<span class="font-headline-md text-headline-md font-bold text-on-primary">RiyadhPro Suction</span>
+<p class="font-body-md text-body-md text-on-primary-container opacity-80 leading-relaxed">
+                    دروب القمة المهنية لخدمات الصرف الصحي والسباكة. مرخصون من البلدية ومعتمدون من قبل هيئات السلامة لتقديم حلول هندسية متكاملة.
+                </p>
+<div class="flex gap-4 mt-2">
+<span class="material-symbols-outlined text-secondary-fixed cursor-pointer hover:scale-110 transition-transform">verified_user</span>
+<span class="material-symbols-outlined text-secondary-fixed cursor-pointer hover:scale-110 transition-transform">engineering</span>
+<span class="material-symbols-outlined text-secondary-fixed cursor-pointer hover:scale-110 transition-transform">location_on</span>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-x-12 gap-y-8">
+<div class="flex flex-col gap-4">
+<h4 class="text-on-primary font-bold">الروابط السريعة</h4>
+<nav class="flex flex-col gap-2">
+<a class="text-on-primary-container hover:text-secondary-fixed transition-colors" href="#">About Us</a>
+<a class="text-on-primary-container hover:text-secondary-fixed transition-colors" href="#">Maintenance Tips</a>
+<a class="text-on-primary-container hover:text-secondary-fixed transition-colors" href="#">Environmental Solutions</a>
+</nav>
+</div>
+<div class="flex flex-col gap-4">
+<h4 class="text-on-primary font-bold">قانوني</h4>
+<nav class="flex flex-col gap-2">
+<a class="text-on-primary-container hover:text-secondary-fixed transition-colors" href="#">Terms of Service</a>
+<a class="text-on-primary-container hover:text-secondary-fixed transition-colors" href="#">Municipality Licensing</a>
+</nav>
+</div>
+</div>
+</div>
+<div class="border-t border-on-primary/10 w-full">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-gutter py-6 flex flex-col md:flex-row justify-between items-center gap-4 text-on-primary-container text-sm">
+<p>© 2024 Riyadh Professional Sewage &amp; Plumbing. Municipality Licensed &amp; Safety Certified.</p>
+<div class="flex gap-6">
+<span class="flex items-center gap-2"><span class="material-symbols-outlined text-sm">call</span> ٩٢٠٠٠٠٠٠٠</span>
+<span class="flex items-center gap-2"><span class="material-symbols-outlined text-sm">language</span> الرياض، المملكة العربية السعودية</span>
+</div>
+</div>
+</div>
+</footer>
+<!-- FAB for Emergency Mobile -->
+<a class="md:hidden fixed bottom-6 right-6 w-16 h-16 bg-secondary-fixed text-on-secondary-fixed rounded-full shadow-xl flex items-center justify-center z-50 active:scale-90 transition-transform" href="tel:+966500000000">
+<span class="material-symbols-outlined text-3xl">phone_in_talk</span>
+</a>
+</body></html>

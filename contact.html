@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+
+<html dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;600;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "secondary": "#006c4a",
+                    "on-primary-container": "#799dd6",
+                    "surface-variant": "#d3e4fe",
+                    "on-secondary-fixed-variant": "#005137",
+                    "on-tertiary-fixed": "#2a1700",
+                    "error-container": "#ffdad6",
+                    "tertiary": "#2e1a00",
+                    "inverse-on-surface": "#eaf1ff",
+                    "on-secondary-container": "#00714e",
+                    "on-error-container": "#93000a",
+                    "on-tertiary-fixed-variant": "#653e00",
+                    "inverse-primary": "#a7c8ff",
+                    "on-error": "#ffffff",
+                    "secondary-container": "#82f5c1",
+                    "on-tertiary": "#ffffff",
+                    "on-primary": "#ffffff",
+                    "error": "#ba1a1a",
+                    "on-surface": "#0b1c30",
+                    "on-secondary-fixed": "#002114",
+                    "surface-container-lowest": "#ffffff",
+                    "background": "#f8f9ff",
+                    "inverse-surface": "#213145",
+                    "outline": "#737780",
+                    "on-background": "#0b1c30",
+                    "tertiary-container": "#4b2d00",
+                    "primary-fixed": "#d5e3ff",
+                    "on-primary-fixed": "#001b3c",
+                    "surface-container-high": "#dce9ff",
+                    "surface-container-low": "#eff4ff",
+                    "surface-tint": "#3a5f94",
+                    "surface-container": "#e5eeff",
+                    "on-tertiary-container": "#d98b00",
+                    "surface": "#f8f9ff",
+                    "secondary-fixed-dim": "#68dba9",
+                    "surface-container-highest": "#d3e4fe",
+                    "on-secondary": "#ffffff",
+                    "surface-dim": "#cbdbf5",
+                    "secondary-fixed": "#85f8c4",
+                    "primary": "#001e40",
+                    "on-surface-variant": "#43474f",
+                    "primary-fixed-dim": "#a7c8ff",
+                    "outline-variant": "#c3c6d1",
+                    "primary-container": "#003366",
+                    "tertiary-fixed-dim": "#ffb95f",
+                    "surface-bright": "#f8f9ff",
+                    "on-primary-fixed-variant": "#1f477b",
+                    "tertiary-fixed": "#ffddb8"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "margin-mobile": "1rem",
+                    "stack-md": "1.5rem",
+                    "stack-lg": "3rem",
+                    "container-max": "1280px",
+                    "gutter": "1.5rem",
+                    "stack-sm": "0.5rem"
+            },
+            "fontFamily": {
+                    "cta": ["Public Sans"],
+                    "body-md": ["Public Sans"],
+                    "headline-lg": ["Public Sans"],
+                    "headline-xl": ["Public Sans"],
+                    "body-lg": ["Public Sans"],
+                    "headline-md": ["Public Sans"],
+                    "label-bold": ["Public Sans"]
+            },
+            "fontSize": {
+                    "cta": ["16px", {"lineHeight": "20px", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "700"}],
+                    "headline-xl": ["48px", {"lineHeight": "56px", "fontWeight": "700"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "label-bold": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "700"}]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .emergency-pulse {
+            animation: pulse-animation 2s infinite;
+        }
+        @keyframes pulse-animation {
+            0% { box-shadow: 0 0 0 0px rgba(186, 26, 26, 0.4); }
+            100% { box-shadow: 0 0 0 20px rgba(186, 26, 26, 0); }
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md">
+<!-- TopNavBar -->
+<header class="bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 sticky top-0 z-50">
+<nav class="flex justify-between items-center w-full px-8 py-4 max-w-7xl mx-auto">
+<div class="text-2xl font-bold text-blue-900 dark:text-blue-100 font-headline-md">دروب القمة</div>
+<div class="hidden md:flex items-center gap-8">
+<a class="font-public-sans text-sm font-semibold tracking-tight text-slate-600 dark:text-slate-400 hover:text-blue-900" href="#">الرئيسية</a>
+<a class="font-public-sans text-sm font-semibold tracking-tight text-slate-600 dark:text-slate-400 hover:text-blue-900" href="#">خدماتنا</a>
+<a class="font-public-sans text-sm font-semibold tracking-tight text-slate-600 dark:text-slate-400 hover:text-blue-900" href="#">من نحن</a>
+<a class="font-public-sans text-sm font-semibold tracking-tight text-blue-700 dark:text-blue-400 border-b-2 border-blue-700 pb-1" href="#">اتصل بنا</a>
+</div>
+<div class="flex items-center gap-4">
+<div class="hidden lg:block text-right">
+<p class="text-xs text-slate-500">الدعم المباشر</p>
+<p class="font-bold text-blue-900 dark:text-blue-300">9665XXXXXXXX</p>
+</div>
+<button class="bg-error text-white px-6 py-2 rounded-lg font-cta text-cta flex items-center gap-2 transition-opacity active:opacity-90">
+<span class="material-symbols-outlined" data-icon="emergency">emergency</span>
+                    اتصال طوارئ
+                </button>
+</div>
+</nav>
+</header>
+<main class="max-w-7xl mx-auto px-8 py-12">
+<!-- Hero Section -->
+<section class="mb-stack-lg grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+<div>
+<span class="inline-flex items-center gap-2 bg-secondary-container text-on-secondary-container px-3 py-1 rounded-full text-label-bold mb-4">
+<span class="material-symbols-outlined text-sm" data-icon="check_circle" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                    متاح الآن في جميع أحياء الرياض
+                </span>
+<h1 class="font-headline-xl text-headline-xl text-primary mb-6 leading-tight">طلب خدمة شفط وتسليك سريعة</h1>
+<p class="text-body-lg text-on-surface-variant mb-8 max-w-xl">
+                    نحن في دروب القمة نوفر حلولاً صناعية دقيقة لخدمات الصرف الصحي. فريقنا مجهز بأحدث الشاحنات الثقيلة للتعامل مع كافة حالات الطوارئ على مدار 24 ساعة.
+                </p>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+<a class="flex items-center justify-center gap-3 bg-primary text-white py-4 px-6 rounded-xl font-cta text-cta hover:bg-primary-container transition-all" href="tel:9665XXXXXXXX">
+<span class="material-symbols-outlined" data-icon="call">call</span>
+                        اتصال مباشر
+                    </a>
+<a class="flex items-center justify-center gap-3 bg-secondary text-white py-4 px-6 rounded-xl font-cta text-cta hover:opacity-90 transition-all" href="https://wa.me/9665XXXXXXXX">
+<span class="material-symbols-outlined" data-icon="chat">chat</span>
+                        واتساب سريع
+                    </a>
+</div>
+</div>
+<div class="relative h-[400px] rounded-3xl overflow-hidden border border-outline-variant">
+<img class="w-full h-full object-cover" data-alt="A professional high-angle shot of a heavy-duty industrial sewage vacuum truck parked on a clean Riyadh street during a bright day. The truck is pristine with professional company branding in deep blue and white. The background shows modern urban infrastructure under a clear blue sky, emphasizing a clean and reliable service environment. The lighting is crisp and high-contrast, highlighting the metallic precision of the equipment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDUydFWTkr6rwYxbeV-hhwZ4nohtiyKuaHgooW30-20AK-poVSDdTWnZ2pbwzYh6EcWLlJQJ2sbJ_WA7ttaofpZp_5eQ8nA7zGSRpyXWsxjOFu8pLKlsCV2BM3UHKZykfluS8srI8D4F-S2zsAlipDubty8q_mvPhd-tnc0bN7JtXGwIJT-_-7I_2zYpO8DL4aG0T9C1Nqq8Rx52X9zQCtl8RV9jrW0osf9sYId_vttmNyLqCRtAHfjqin7qi1fybAhHqg1teKDJTEj"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/60 to-transparent"></div>
+<div class="absolute bottom-6 right-6 left-6 bg-white/90 backdrop-blur p-4 rounded-xl flex items-center justify-between">
+<div>
+<p class="text-sm font-bold text-primary">جاهزية تامة</p>
+<p class="text-xs text-on-surface-variant">أكثر من 50 شاحنة في الخدمة</p>
+</div>
+<span class="material-symbols-outlined text-secondary text-4xl" data-icon="verified_user" style="font-variation-settings: 'FILL' 1;">verified_user</span>
+</div>
+</div>
+</section>
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+<!-- Request Form (2/3 width on desktop) -->
+<div class="lg:col-span-2 bg-white p-8 rounded-3xl border border-slate-200 shadow-sm">
+<div class="flex items-center gap-4 mb-8">
+<div class="w-12 h-12 bg-primary-fixed rounded-xl flex items-center justify-center text-primary">
+<span class="material-symbols-outlined" data-icon="assignment_late">assignment_late</span>
+</div>
+<div>
+<h2 class="text-headline-md font-headline-md text-primary">نموذج طلب خدمة طارئة</h2>
+<p class="text-sm text-on-surface-variant">يرجى تعبئة البيانات وسيتم التواصل معك خلال 5 دقائق</p>
+</div>
+</div>
+<form class="space-y-6">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="space-y-2">
+<label class="block text-label-bold text-on-surface">الاسم بالكامل</label>
+<input class="w-full p-3 rounded-lg border-slate-200 focus:border-primary focus:ring-primary bg-slate-50" placeholder="أدخل اسمك" type="text"/>
+</div>
+<div class="space-y-2">
+<label class="block text-label-bold text-on-surface">رقم الجوال</label>
+<input class="w-full p-3 rounded-lg border-slate-200 focus:border-primary focus:ring-primary bg-slate-50 text-left" dir="ltr" placeholder="05XXXXXXXX" type="tel"/>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="space-y-2">
+<label class="block text-label-bold text-on-surface">نوع الخدمة</label>
+<select class="w-full p-3 rounded-lg border-slate-200 focus:border-primary focus:ring-primary bg-slate-50">
+<option>شفط بيارات</option>
+<option>تسليك مجاري</option>
+<option>تنظيف خزانات</option>
+<option>صيانة سباكة عامة</option>
+</select>
+</div>
+<div class="space-y-2">
+<label class="block text-label-bold text-on-surface">الحي (في الرياض)</label>
+<input class="w-full p-3 rounded-lg border-slate-200 focus:border-primary focus:ring-primary bg-slate-50" placeholder="مثال: حي الصحافة، حي الملقا..." type="text"/>
+</div>
+</div>
+<div class="space-y-4">
+<label class="block text-label-bold text-on-surface">مستوى الاستعجال</label>
+<div class="grid grid-cols-3 gap-4">
+<label class="cursor-pointer">
+<input checked="" class="hidden peer" name="urgency" type="radio"/>
+<div class="p-4 text-center rounded-xl border-2 border-slate-200 peer-checked:border-primary peer-checked:bg-primary-fixed transition-all">
+<span class="block font-bold">عادي</span>
+<span class="text-xs">خلال 24 ساعة</span>
+</div>
+</label>
+<label class="cursor-pointer">
+<input class="hidden peer" name="urgency" type="radio"/>
+<div class="p-4 text-center rounded-xl border-2 border-slate-200 peer-checked:border-secondary peer-checked:bg-secondary-container transition-all">
+<span class="block font-bold">عاجل</span>
+<span class="text-xs">خلال 4 ساعات</span>
+</div>
+</label>
+<label class="cursor-pointer">
+<input class="hidden peer" name="urgency" type="radio"/>
+<div class="p-4 text-center rounded-xl border-2 border-slate-200 peer-checked:border-error peer-checked:bg-error-container transition-all">
+<span class="block font-bold">طارئ جداً</span>
+<span class="text-xs">فوراً - حالة حرجة</span>
+</div>
+</label>
+</div>
+</div>
+<button class="w-full bg-primary text-white py-4 rounded-xl font-cta text-cta hover:bg-primary-container transition-all flex items-center justify-center gap-2" type="submit">
+<span class="material-symbols-outlined" data-icon="send">send</span>
+                        إرسال طلب الخدمة
+                    </button>
+</form>
+</div>
+<!-- Sidebar Info -->
+<div class="space-y-8">
+<!-- 24/7 Card -->
+<div class="bg-primary-container text-white p-8 rounded-3xl relative overflow-hidden">
+<div class="relative z-10">
+<span class="material-symbols-outlined text-5xl mb-4 text-on-primary-container" data-icon="schedule" style="font-variation-settings: 'FILL' 1;">schedule</span>
+<h3 class="text-headline-md font-headline-md mb-2">نعمل على مدار الساعة</h3>
+<p class="text-on-primary-container leading-relaxed">
+                            فريق الطوارئ لدينا متواجد في كافة مناوبات الليل والنهار، حتى في العطلات الرسمية لضمان سلامة منزلك.
+                        </p>
+</div>
+<div class="absolute -bottom-4 -left-4 opacity-10">
+<span class="material-symbols-outlined text-[120px]" data-icon="support_agent">support_agent</span>
+</div>
+</div>
+<!-- Locations Card -->
+<div class="bg-white p-8 rounded-3xl border border-slate-200">
+<h3 class="text-headline-sm font-bold text-primary mb-6 flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary" data-icon="location_on">location_on</span>
+                        تغطية شاملة للرياض
+                    </h3>
+<ul class="space-y-4">
+<li class="flex items-center gap-3 text-on-surface-variant">
+<span class="w-2 h-2 bg-secondary rounded-full"></span>
+                            شمال الرياض (الياسمين، الملقا، النرجس)
+                        </li>
+<li class="flex items-center gap-3 text-on-surface-variant">
+<span class="w-2 h-2 bg-secondary rounded-full"></span>
+                            شرق الرياض (الرمال، النسيم، الروضة)
+                        </li>
+<li class="flex items-center gap-3 text-on-surface-variant">
+<span class="w-2 h-2 bg-secondary rounded-full"></span>
+                            غرب الرياض (الشفا، السويدي، لبن)
+                        </li>
+<li class="flex items-center gap-3 text-on-surface-variant">
+<span class="w-2 h-2 bg-secondary rounded-full"></span>
+                            وسط وجنوب الرياض
+                        </li>
+</ul>
+<div class="mt-8 pt-8 border-t border-slate-100 h-48 rounded-xl overflow-hidden grayscale">
+<img class="w-full h-full object-cover" data-alt="A clean, minimalist map illustration showing the city of Riyadh with professional data points and network lines connecting different districts. The map is rendered in corporate blue and gray tones, emphasizing service coverage and logistical efficiency. The style is modern, technical, and clean, perfectly fitting an industrial service provider's website." src="https://lh3.googleusercontent.com/aida-public/AB6AXuASg_dy3rV8zHRzUaK_J3g0P9E7IBLJIRFD503wzl4YwUMHwVO_EkwUNv7tRQoQ8m0Oqc5SLhTYK4Mw5RLMGFWUH1EtKySQeL81Si-D-Nxw_gl22aGeWZfCoDu5wHeGvJmJgfaZR1I3jiWF46Sa81ORYmF4mt55eYeafN36jfuEXPNqkryHYRksRkRmPiD69Ze8j9TdmNW17GmH1xjVTB118xQ0L9rwXqh8ljxXZODYLWAgZLEaiV5RE73YHMJKYXbjmSYqKrNrII4p"/>
+</div>
+</div>
+<!-- Trust Badges -->
+<div class="flex flex-wrap justify-center gap-6 py-4 opacity-60 grayscale hover:grayscale-0 transition-all">
+<span class="material-symbols-outlined text-4xl" data-icon="health_and_safety">health_and_safety</span>
+<span class="material-symbols-outlined text-4xl" data-icon="gavel">gavel</span>
+<span class="material-symbols-outlined text-4xl" data-icon="workspace_premium">workspace_premium</span>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-slate-50 dark:bg-slate-950 border-t border-slate-200 dark:border-slate-800">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-8 px-8 py-12 max-w-7xl mx-auto">
+<div class="col-span-1 md:col-span-2">
+<div class="text-xl font-black text-blue-900 dark:text-blue-100 mb-4">دروب القمة</div>
+<p class="text-slate-500 dark:text-slate-400 max-w-sm mb-6 font-public-sans text-sm leading-relaxed">
+                    الخيار الأول في الرياض لخدمات شفط البيارات وتسليك المجاري بأحدث التقنيات وبأيدي خبراء مختصين. نلتزم بالسرعة والدقة والأمان.
+                </p>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-slate-400 cursor-pointer hover:text-primary" data-icon="public">public</span>
+<span class="material-symbols-outlined text-slate-400 cursor-pointer hover:text-primary" data-icon="share">share</span>
+</div>
+</div>
+<div>
+<h4 class="font-bold text-primary mb-4">خدماتنا</h4>
+<ul class="space-y-2">
+<li><a class="text-slate-500 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-300 font-public-sans text-sm underline-offset-4 hover:underline" href="#">خدمات الشفط</a></li>
+<li><a class="text-slate-500 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-300 font-public-sans text-sm underline-offset-4 hover:underline" href="#">تنظيف الخزانات</a></li>
+<li><a class="text-slate-500 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-300 font-public-sans text-sm underline-offset-4 hover:underline" href="#">صيانة السباكة</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold text-primary mb-4">قانوني</h4>
+<ul class="space-y-2">
+<li><a class="text-slate-500 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-300 font-public-sans text-sm underline-offset-4 hover:underline" href="#">الشروط والأحكام</a></li>
+<li><a class="text-slate-500 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-300 font-public-sans text-sm underline-offset-4 hover:underline" href="#">سياسة الخصوصية</a></li>
+</ul>
+</div>
+</div>
+<div class="border-t border-slate-200 dark:border-slate-800 py-6 text-center text-xs text-slate-400">
+            © 2024 دروب القمة لخدمات الصرف الصحي. جميع الحقوق محفوظة.
+        </div>
+</footer>
+<!-- Quick Contact FAB -->
+<a class="fixed bottom-6 right-6 w-16 h-16 bg-error text-white rounded-full flex items-center justify-center shadow-xl hover:scale-110 active:scale-95 transition-all z-[100] emergency-pulse" href="tel:9665XXXXXXXX">
+<span class="material-symbols-outlined text-3xl" data-icon="call" style="font-variation-settings: 'FILL' 1;">call</span>
+</a>
+</body></html>
