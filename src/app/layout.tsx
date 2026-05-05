@@ -8,7 +8,7 @@ const notoKufi = Noto_Kufi_Arabic({ subsets: ["arabic"], variable: "--font-noto-
 
 export async function generateMetadata(): Promise<Metadata> {
   const settings = await getSettings();
-  const title = settings?.siteTitle || "دروب القمة لشفط البيارات";
+  const title = settings?.siteTitle || "بيارات الرياض لشفط البيارات";
   const description = settings?.siteDescription || "الحل الجذري والسريع لمشاكل البيارات والمجاري بالرياض";
   const keywords = settings?.seoKeywords ? settings.seoKeywords.split(",").map((k: string) => k.trim()) : ["شفط بيارات", "تسليك مجاري", "وايت شفط", "الرياض"];
   

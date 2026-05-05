@@ -14,9 +14,9 @@ export default async function Header() {
           <MobileMenu settings={settings} />
           <Link href="/" className="flex items-center gap-2 mr-2 md:mr-0">
             {settings.logoUrl ? (
-              <img src={settings.logoUrl} alt={settings.siteTitle || "دروب القمة"} style={{ height: `${settings.logoSize || 60}px` }} className="object-contain" />
+              <img src={settings.logoUrl} alt={settings.siteTitle || "بيارات الرياض"} style={{ height: `${settings.logoSize || 60}px` }} className="object-contain" />
             ) : (
-              <div className="text-2xl font-bold text-primary dark:text-blue-100">{settings.siteTitle || "دروب القمة"}</div>
+              <div className="text-2xl font-bold text-primary dark:text-blue-100">{settings.siteTitle || "بيارات الرياض"}</div>
             )}
           </Link>
         </div>

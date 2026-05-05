@@ -14,7 +14,7 @@ export default async function Blog() {
       <main className="max-w-container-max mx-auto px-margin-mobile md:px-gutter">
         {/* Hero Section */}
         <section className="py-stack-lg text-center" data-aos="fade-up">
-          <h1 className="font-headline-xl text-headline-xl text-primary mb-stack-sm max-w-4xl mx-auto">مدونة دروب القمة: نصائح وحلول لبيئة أنظف</h1>
+          <h1 className="font-headline-xl text-headline-xl text-primary mb-stack-sm max-w-4xl mx-auto">مدونة بيارات الرياض: نصائح وحلول لبيئة أنظف</h1>
           <p className="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">
             اكتشف مقالات تعليمية ونصائح احترافية حول صيانة الصرف الصحي والمحافظة على سلامة منزلك في الرياض.
           </p>

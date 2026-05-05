@@ -15,7 +15,7 @@ export default function Contact() {
                 </span>
 <h1 className="font-headline-xl text-headline-xl text-primary mb-6 leading-tight">طلب خدمة شفط وتسليك سريعة</h1>
 <p className="text-body-lg text-on-surface-variant mb-8 max-w-xl">
-                    نحن في دروب القمة نوفر حلولاً صناعية دقيقة لخدمات الصرف الصحي. فريقنا مجهز بأحدث الشاحنات الثقيلة للتعامل مع كافة حالات الطوارئ على مدار 24 ساعة.
+                    نحن في بيارات الرياض نوفر حلولاً صناعية دقيقة لخدمات الصرف الصحي. فريقنا مجهز بأحدث الشاحنات الثقيلة للتعامل مع كافة حالات الطوارئ على مدار 24 ساعة.
                 </p>
 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
 <a className="flex items-center justify-center gap-3 bg-primary text-white py-4 px-6 rounded-xl font-cta text-cta hover:bg-primary-container transition-all" href="tel:966583165533">

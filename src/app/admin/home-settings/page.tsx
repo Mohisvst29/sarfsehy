@@ -7,7 +7,7 @@ export default function HomeSettingsPage() {
   const [isSaving, setIsSaving] = useState(false);
   const [isUploadingLogo, setIsUploadingLogo] = useState(false);
   const [settings, setSettings] = useState<any>({
-    siteTitle: "دروب القمة لشفط البيارات",
+    siteTitle: "بيارات الرياض لشفط البيارات",
     siteDescription: "الحل الجذري والسريع لمشاكل البيارات والمجاري بالرياض.",
     logoUrl: "",
     logoSize: 60,

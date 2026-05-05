@@ -38,7 +38,7 @@ export default function AdminLayoutClient({ children }: { children: React.ReactN
       `}>
         <div className="px-6 mb-8 flex justify-between items-center">
           <div>
-            <h1 className="text-headline-sm font-headline-sm font-black text-primary">دروب القمة</h1>
+            <h1 className="text-headline-sm font-headline-sm font-black text-primary">بيارات الرياض</h1>
             <p className="text-body-sm font-body-md text-on-surface-variant">مركز التحكم والارسال</p>
           </div>
           <button className="md:hidden text-on-surface-variant" onClick={() => setIsMobileMenuOpen(false)}>

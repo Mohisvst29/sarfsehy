@@ -13,7 +13,7 @@ export default async function Home() {
 {/* Trust Section (Why Choose Us) - Bento Layout */}
 <section className="py-24 max-w-7xl mx-auto px-8" data-aos="fade-up">
 <div className="text-center mb-16 space-y-4">
-<h2 className="font-headline-lg text-headline-lg text-primary">لماذا تختار دروب القمة؟</h2>
+<h2 className="font-headline-lg text-headline-lg text-primary">لماذا تختار بيارات الرياض؟</h2>
 <div className="w-24 h-1 bg-secondary mx-auto rounded-full"></div>
 </div>
 <div className="grid grid-cols-1 md:grid-cols-3 gap-6">

@@ -31,9 +31,9 @@ export default async function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 px-8 py-12 max-w-7xl mx-auto">
           <div className="md:col-span-1 space-y-4">
             {settings.logoUrl ? (
-              <img src={settings.logoUrl} alt={settings.siteTitle || "دروب القمة"} style={{ height: `${settings.logoSize || 60}px` }} className="object-contain" />
+              <img src={settings.logoUrl} alt={settings.siteTitle || "بيارات الرياض"} style={{ height: `${settings.logoSize || 60}px` }} className="object-contain" />
             ) : (
-              <div className="text-xl font-black text-blue-900 dark:text-blue-100">{settings.siteTitle || "دروب القمة"}</div>
+              <div className="text-xl font-black text-blue-900 dark:text-blue-100">{settings.siteTitle || "بيارات الرياض"}</div>
             )}
             <p className="font-public-sans text-sm leading-relaxed text-slate-500 dark:text-slate-400">
               {settings.siteDescription || "الشركة الرائدة في حلول الصرف الصحي وتفريغ البيارات في مدينة الرياض. خبرة تمتد لأكثر من 15 عاماً في خدمة المنازل والمنشآت."}
@@ -71,7 +71,7 @@ export default async function Footer() {
           </div>
         </div>
         <div className="border-t border-slate-200 dark:border-slate-800 py-6 text-center">
-          <p className="font-public-sans text-xs text-slate-400">© 2024 دروب القمة لخدمات الصرف الصحي. جميع الحقوق محفوظة.</p>
+          <p className="font-public-sans text-xs text-slate-400">© 2024 بيارات الرياض لخدمات الصرف الصحي. جميع الحقوق محفوظة.</p>
         </div>
       </footer>
     </>

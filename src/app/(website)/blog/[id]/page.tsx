@@ -8,7 +8,7 @@ export async function generateMetadata({ params }: { params: { id: string } }) {
   if (!post) return { title: "مقال غير موجود" };
   
   return {
-    title: `${post.title} - دروب القمة`,
+    title: `${post.title} - بيارات الرياض`,
     description: post.excerpt,
     openGraph: {
       title: post.title,

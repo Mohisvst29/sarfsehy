@@ -13,7 +13,7 @@ export default async function Services() {
           <div className="max-w-7xl mx-auto px-8 py-24 md:py-32 relative z-10">
             <div className="max-w-2xl">
               <span className="inline-block px-4 py-1 rounded-full bg-secondary text-white text-sm font-bold mb-6">متاح الآن 24/7</span>
-              <h1 className="font-headline-xl text-headline-xl mb-6 leading-tight">خدمات دروب القمة الاحترافية لصيانة وشفط البيارات بالرياض</h1>
+              <h1 className="font-headline-xl text-headline-xl mb-6 leading-tight">خدمات بيارات الرياض الاحترافية لصيانة وشفط البيارات</h1>
               <p className="font-body-lg text-body-lg text-white mb-8">حلول هندسية متكاملة لشفط البيارات، تنظيف الخزانات، وصيانة السباكة بأحدث المعدات الألمانية وفريق فني متخصص.</p>
               <div className="flex flex-wrap gap-4">
                 <a href="tel:966583165533" className="bg-on-tertiary-container text-primary px-8 py-4 rounded-xl font-cta text-cta flex items-center gap-2">

@@ -1,7 +1,7 @@
 import mongoose, { Schema, model, models } from "mongoose";
 
 const SettingsSchema = new Schema({
-  siteTitle: { type: String, required: true, default: "دروب القمة لشفط البيارات" },
+  siteTitle: { type: String, required: true, default: "بيارات الرياض لشفط البيارات" },
   siteDescription: { type: String, required: true, default: "الحل الجذري والسريع لمشاكل البيارات والمجاري بالرياض." },
   logoUrl: { type: String, default: "" },
   logoSize: { type: Number, default: 60 },

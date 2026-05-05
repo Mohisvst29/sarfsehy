@@ -14,7 +14,7 @@ export default function About() {
 </div>
 <div className="relative z-10 max-w-7xl mx-auto px-8 w-full">
 <div className="max-w-2xl">
-<h1 className="font-headline-xl text-headline-xl text-white mb-6">دروب القمة: ريادة الحلول البيئية في الرياض</h1>
+<h1 className="font-headline-xl text-headline-xl text-white mb-6">بيارات الرياض: ريادة الحلول البيئية في الرياض</h1>
 <p className="font-body-lg text-body-lg text-white/90 leading-relaxed">تأسسنا لنكون الحصن المتين للبنية التحتية في عاصمتنا، ملتزمين بأعلى معايير الدقة المهنية في خدمات الصرف الصحي.</p>
 </div>
 </div>
@@ -26,7 +26,7 @@ export default function About() {
 <span className="font-label-bold text-label-bold text-secondary tracking-widest uppercase">قصتنا</span>
 <h2 className="font-headline-lg text-headline-lg text-primary">تحديات الأمس، حلول اليوم</h2>
 <p className="font-body-md text-body-md text-on-surface-variant leading-relaxed">
-                        انطلقت "دروب القمة" من حاجة ملحة في قلب مدينة الرياض لإيجاد حلول جذرية ومستدامة لتحديات الصرف الصحي. واجهت العاصمة نمواً عمرانياً سريعاً تطلب شريكاً يتمتع بالكفاءة والسرعة والمعدات الحديثة. نحن لم نقم فقط بتوفير شاحنات شفط، بل بنينا منظومة متكاملة من الخبرات التقنية التي تضمن بقاء بيئة الرياض نظيفة وآمنة للجميع.
+                        انطلقت "بيارات الرياض" من حاجة ملحة في قلب مدينة الرياض لإيجاد حلول جذرية ومستدامة لتحديات الصرف الصحي. واجهت العاصمة نمواً عمرانياً سريعاً تطلب شريكاً يتمتع بالكفاءة والسرعة والمعدات الحديثة. نحن لم نقم فقط بتوفير شاحنات شفط، بل بنينا منظومة متكاملة من الخبرات التقنية التي تضمن بقاء بيئة الرياض نظيفة وآمنة للجميع.
                     </p>
 <div className="grid grid-cols-2 gap-6 pt-8">
 <div className="border-r-4 border-secondary pr-6">
