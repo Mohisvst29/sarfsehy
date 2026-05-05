@@ -19,6 +19,21 @@ const SettingsSchema = new Schema({
   email: { type: String, default: "info@darub-alqimma.com" },
   address: { type: String, default: "الرياض، المملكة العربية السعودية" },
   mapEmbed: { type: String, default: "" },
+  
+  // Social Links
+  facebook: { type: String, default: "" },
+  twitter: { type: String, default: "" },
+  instagram: { type: String, default: "" },
+  snapchat: { type: String, default: "" },
+  tiktok: { type: String, default: "" },
+  
+  // SEO & Scripts
+  seoKeywords: { type: String, default: "شفط بيارات الرياض, تسليك مجاري, وايت شفط صرف صحي" },
+  seoMetaImage: { type: String, default: "" },
+  googleAnalyticsId: { type: String, default: "" },
+  googleTagManagerId: { type: String, default: "" },
+  customHeadScripts: { type: String, default: "" },
+  customBodyScripts: { type: String, default: "" },
 });
 
 export const Settings = models?.Settings || model("Settings", SettingsSchema);

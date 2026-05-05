@@ -17,6 +17,7 @@ export default function AdminLayoutClient({ children }: { children: React.ReactN
     { href: "/admin/services", icon: "plumbing", label: "إدارة الخدمات" },
     { href: "/admin/blog", icon: "article", label: "إدارة المقالات" },
     { href: "/admin/contact-settings", icon: "contact_phone", label: "إعدادات التواصل" },
+    { href: "/admin/seo-settings", icon: "public", label: "SEO وأكواد التتبع" },
     { href: "/admin/settings", icon: "manage_accounts", label: "إعدادات الحساب" },
   ];
 

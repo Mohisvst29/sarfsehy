@@ -38,6 +38,13 @@ export default async function Footer() {
             <p className="font-public-sans text-sm leading-relaxed text-slate-500 dark:text-slate-400">
               {settings.siteDescription || "الشركة الرائدة في حلول الصرف الصحي وتفريغ البيارات في مدينة الرياض. خبرة تمتد لأكثر من 15 عاماً في خدمة المنازل والمنشآت."}
             </p>
+            <div className="flex flex-wrap gap-4 pt-2">
+              {settings.facebook && <a href={settings.facebook} target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-blue-600 transition-colors"><img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" className="w-5 h-5 opacity-70 hover:opacity-100 dark:invert" alt="Facebook" /></a>}
+              {settings.twitter && <a href={settings.twitter} target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-blue-400 transition-colors"><img src="https://cdn-icons-png.flaticon.com/512/733/733590.png" className="w-5 h-5 opacity-70 hover:opacity-100 dark:invert" alt="Twitter" /></a>}
+              {settings.instagram && <a href={settings.instagram} target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-pink-600 transition-colors"><img src="https://cdn-icons-png.flaticon.com/512/733/733558.png" className="w-5 h-5 opacity-70 hover:opacity-100 dark:invert" alt="Instagram" /></a>}
+              {settings.snapchat && <a href={settings.snapchat} target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-yellow-500 transition-colors"><img src="https://cdn-icons-png.flaticon.com/512/3670/3670151.png" className="w-5 h-5 opacity-70 hover:opacity-100 dark:invert" alt="Snapchat" /></a>}
+              {settings.tiktok && <a href={settings.tiktok} target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-black transition-colors"><img src="https://cdn-icons-png.flaticon.com/512/3046/3046121.png" className="w-5 h-5 opacity-70 hover:opacity-100 dark:invert" alt="TikTok" /></a>}
+            </div>
           </div>
           <div className="space-y-4">
             <h4 className="font-bold text-primary dark:text-blue-200">خدماتنا</h4>
