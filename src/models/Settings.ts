@@ -3,6 +3,8 @@ import mongoose, { Schema, model, models } from "mongoose";
 const SettingsSchema = new Schema({
   siteTitle: { type: String, required: true, default: "دروب القمة لشفط البيارات" },
   siteDescription: { type: String, required: true, default: "الحل الجذري والسريع لمشاكل البيارات والمجاري بالرياض." },
+  logoUrl: { type: String, default: "" },
+  logoSize: { type: Number, default: 60 },
   heroImages: [{ type: String }],
   ctaText: { type: String, default: "اتصل بنا الآن" },
   ctaLink: { type: String, default: "tel:+966583165533" },

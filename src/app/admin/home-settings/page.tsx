@@ -1,60 +1,94 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
+import { getSettings, updateSettings, uploadImage } from "@/lib/actions";
 
 export default function HomeSettingsPage() {
   const [isSaving, setIsSaving] = useState(false);
+  const [isUploadingLogo, setIsUploadingLogo] = useState(false);
+  const [settings, setSettings] = useState<any>({
+    siteTitle: "دروب القمة لشفط البيارات",
+    siteDescription: "الحل الجذري والسريع لمشاكل البيارات والمجاري بالرياض.",
+    logoUrl: "",
+    logoSize: 60,
+    ctaText: "اتصل بنا الآن",
+    ctaLink: "tel:+966583165533"
+  });
 
-  const handleSave = (e: React.FormEvent) => {
+  const loadSettings = async () => {
+    const data = await getSettings();
+    setSettings(data);
+  };
+
+  useEffect(() => {
+    loadSettings();
+  }, []);
+
+  const handleLogoUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (!file) return;
+    setIsUploadingLogo(true);
+    const formData = new FormData();
+    formData.append("file", file);
+    try {
+      const res: any = await uploadImage(formData);
+      setSettings({ ...settings, logoUrl: res.url });
+    } catch (err) {
+      alert("حدث خطأ في رفع الشعار");
+    } finally {
+      setIsUploadingLogo(false);
+    }
+  };
+
+  const handleSave = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSaving(true);
-    setTimeout(() => {
-      setIsSaving(false);
-      alert("تم حفظ إعدادات الصفحة الرئيسية بنجاح!");
-    }, 1000);
+    await updateSettings(settings);
+    setIsSaving(false);
+    alert("تم حفظ الإعدادات بنجاح!");
   };
 
   return (
     <div className="max-w-4xl mx-auto pb-10">
-      <h2 className="text-headline-lg font-headline-lg text-primary mb-6">إعدادات الصفحة الرئيسية</h2>
+      <h2 className="text-headline-lg font-headline-lg text-primary mb-6">إعدادات الصفحة الرئيسية والشعار</h2>
       
       <form onSubmit={handleSave} className="space-y-8 bg-surface-container-lowest p-8 rounded-2xl border border-outline-variant">
         
+        {/* Logo Section */}
+        <div className="space-y-4">
+          <h3 className="text-headline-md text-secondary border-b border-outline-variant pb-2">شعار الموقع (Logo)</h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="space-y-2">
+              <label className="font-label-bold">صورة الشعار</label>
+              <input type="file" accept="image/*" onChange={handleLogoUpload} className="w-full p-2 rounded-lg border border-outline-variant outline-none focus:border-primary bg-white" />
+              {isUploadingLogo && <span className="text-sm text-secondary">جاري رفع الشعار...</span>}
+            </div>
+            <div className="space-y-2">
+              <label className="font-label-bold">حجم الشعار (بالبكسل)</label>
+              <input type="number" min="20" max="200" className="w-full p-3 rounded-lg border border-outline-variant outline-none focus:border-primary dir-ltr" value={settings.logoSize} onChange={e => setSettings({...settings, logoSize: parseInt(e.target.value)})} />
+            </div>
+          </div>
+          {settings.logoUrl && (
+            <div className="mt-4 p-4 border border-outline-variant rounded-lg bg-surface-container-low flex flex-col items-center gap-2">
+              <span className="text-sm text-on-surface-variant mb-2">معاينة الشعار بالحجم المحدد:</span>
+              <img src={settings.logoUrl} alt="Logo Preview" style={{ height: `${settings.logoSize}px` }} className="object-contain" />
+              <button type="button" onClick={() => setSettings({...settings, logoUrl: ""})} className="text-error text-sm mt-2">إزالة الشعار</button>
+            </div>
+          )}
+        </div>
+
         {/* Hero Section */}
         <div className="space-y-4">
           <h3 className="text-headline-md text-secondary border-b border-outline-variant pb-2">القسم الرئيسي (الواجهة)</h3>
           
           <div className="space-y-2">
             <label className="font-label-bold">العنوان الرئيسي</label>
-            <input type="text" className="w-full p-3 rounded-lg border border-outline-variant outline-none focus:border-primary" defaultValue="دروب القمة لشفط البيارات" />
+            <input type="text" className="w-full p-3 rounded-lg border border-outline-variant outline-none focus:border-primary" value={settings.siteTitle} onChange={e => setSettings({...settings, siteTitle: e.target.value})} />
           </div>
           
           <div className="space-y-2">
             <label className="font-label-bold">النص الوصفي</label>
-            <textarea className="w-full p-3 rounded-lg border border-outline-variant outline-none focus:border-primary h-24" defaultValue="الحل الجذري والسريع لمشاكل البيارات والمجاري بالرياض. فريق محترف واستجابة فورية على مدار 24 ساعة." />
-          </div>
-
-          <div className="space-y-2 pt-4">
-            <label className="font-label-bold">صور الخلفية (Slider)</label>
-            <div className="flex flex-col gap-4">
-              <div className="border-2 border-dashed border-outline p-8 rounded-xl text-center hover:bg-surface-container-low transition-colors cursor-pointer">
-                <span className="material-symbols-outlined text-4xl text-on-surface-variant mb-2">add_photo_alternate</span>
-                <p className="text-label-bold">اضغط هنا لرفع صور جديدة</p>
-                <p className="text-xs text-on-surface-variant mt-1">يُفضل مقاس 1920x1080 بصيغة WebP أو JPG</p>
-              </div>
-              
-              {/* Dummy Images Grid */}
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                <div className="relative rounded-lg overflow-hidden border border-outline group">
-                  <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&q=80&w=300" className="w-full h-24 object-cover" alt="Hero 1" />
-                  <button type="button" className="absolute top-1 left-1 bg-error text-white p-1 rounded-full opacity-0 group-hover:opacity-100 transition-opacity"><span className="material-symbols-outlined text-sm">delete</span></button>
-                </div>
-                <div className="relative rounded-lg overflow-hidden border border-outline group">
-                  <img src="https://images.unsplash.com/photo-1605810230434-7631ac76ec81?auto=format&fit=crop&q=80&w=300" className="w-full h-24 object-cover" alt="Hero 2" />
-                  <button type="button" className="absolute top-1 left-1 bg-error text-white p-1 rounded-full opacity-0 group-hover:opacity-100 transition-opacity"><span className="material-symbols-outlined text-sm">delete</span></button>
-                </div>
-              </div>
-            </div>
+            <textarea className="w-full p-3 rounded-lg border border-outline-variant outline-none focus:border-primary h-24" value={settings.siteDescription} onChange={e => setSettings({...settings, siteDescription: e.target.value})} />
           </div>
         </div>
 
@@ -64,17 +98,17 @@ export default function HomeSettingsPage() {
           <div className="grid grid-cols-2 gap-4">
             <div className="space-y-2">
               <label className="font-label-bold">نص الزر</label>
-              <input type="text" className="w-full p-3 rounded-lg border border-outline-variant outline-none focus:border-primary" defaultValue="اتصل بنا الآن" />
+              <input type="text" className="w-full p-3 rounded-lg border border-outline-variant outline-none focus:border-primary" value={settings.ctaText} onChange={e => setSettings({...settings, ctaText: e.target.value})} />
             </div>
             <div className="space-y-2">
               <label className="font-label-bold">الرابط (URL / Phone)</label>
-              <input type="text" className="w-full p-3 rounded-lg border border-outline-variant outline-none focus:border-primary" dir="ltr" defaultValue="tel:966583165533" />
+              <input type="text" className="w-full p-3 rounded-lg border border-outline-variant outline-none focus:border-primary" dir="ltr" value={settings.ctaLink} onChange={e => setSettings({...settings, ctaLink: e.target.value})} />
             </div>
           </div>
         </div>
 
         <div className="pt-6 flex justify-end">
-          <button type="submit" disabled={isSaving} className="bg-primary text-on-primary px-8 py-3 rounded-xl font-bold flex items-center gap-2 hover:opacity-90 disabled:opacity-50 transition-all">
+          <button type="submit" disabled={isSaving || isUploadingLogo} className="bg-primary text-on-primary px-8 py-3 rounded-xl font-bold flex items-center gap-2 hover:opacity-90 disabled:opacity-50 transition-all">
             {isSaving ? <span className="material-symbols-outlined animate-spin">sync</span> : <span className="material-symbols-outlined">save</span>}
             حفظ التغييرات
           </button>
