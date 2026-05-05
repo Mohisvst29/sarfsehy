@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import AnimatedCounter from "@/components/AnimatedCounter";
 
 export default function Home() {
   return (
@@ -38,19 +39,27 @@ export default function Home() {
 <div className="bg-white/5 backdrop-blur-xl border border-white/10 p-8 rounded-[2rem] shadow-2xl">
 <div className="grid grid-cols-2 gap-6">
 <div className="p-6 bg-white/10 rounded-2xl border border-white/5 text-center">
-<div className="text-white text-3xl font-black mb-1">24/7</div>
+<div className="text-white text-3xl font-black mb-1" dir="ltr">
+  <AnimatedCounter to={24} suffix="/7" />
+</div>
 <div className="text-on-primary-container text-sm">متاحون دائماً</div>
 </div>
 <div className="p-6 bg-white/10 rounded-2xl border border-white/5 text-center">
-<div className="text-white text-3xl font-black mb-1">150+</div>
+<div className="text-white text-3xl font-black mb-1" dir="ltr">
+  <AnimatedCounter to={150} prefix="+" />
+</div>
 <div className="text-on-primary-container text-sm">وايت شفط</div>
 </div>
 <div className="p-6 bg-white/10 rounded-2xl border border-white/5 text-center">
-<div className="text-white text-3xl font-black mb-1">30</div>
+<div className="text-white text-3xl font-black mb-1" dir="ltr">
+  <AnimatedCounter to={30} />
+</div>
 <div className="text-on-primary-container text-sm">دقيقة وصول</div>
 </div>
 <div className="p-6 bg-white/10 rounded-2xl border border-white/5 text-center">
-<div className="text-white text-3xl font-black mb-1">100%</div>
+<div className="text-white text-3xl font-black mb-1" dir="ltr">
+  <AnimatedCounter to={100} suffix="%" />
+</div>
 <div className="text-on-primary-container text-sm">ضمان الخدمة</div>
 </div>
 </div>
@@ -96,7 +105,9 @@ export default function Home() {
 <div className="w-10 h-10 rounded-full border-2 border-primary bg-slate-200"></div>
 <div className="w-10 h-10 rounded-full border-2 border-primary bg-slate-300"></div>
 <div className="w-10 h-10 rounded-full border-2 border-primary bg-slate-400"></div>
-<div className="w-10 h-10 rounded-full border-2 border-primary bg-white flex items-center justify-center text-primary text-[10px] font-bold">+50</div>
+<div className="w-10 h-10 rounded-full border-2 border-primary bg-white flex items-center justify-center text-primary text-[10px] font-bold" dir="ltr">
+  <AnimatedCounter to={50} prefix="+" />
+</div>
 </div>
 </div>
 </div>
