@@ -28,7 +28,7 @@ export default function FloatingContact({ phoneNumber }: { phoneNumber: string }
         href={`https://wa.me/${cleanPhone}`} 
         target="_blank" 
         rel="noopener noreferrer"
-        className="w-14 h-14 bg-[#25D366] text-white rounded-full flex items-center justify-center shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300 relative group"
+        className="w-14 h-14 bg-[#25D366] text-white rounded-full flex items-center justify-center shadow-lg hover:shadow-xl hover:-translate-y-1 active:scale-90 transition-all duration-300 relative group animate-[bounce_3s_infinite]"
         aria-label="تواصل معنا عبر واتساب"
       >
         <span className="absolute right-full mr-4 bg-black/80 text-white text-sm py-1 px-3 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">
@@ -42,7 +42,7 @@ export default function FloatingContact({ phoneNumber }: { phoneNumber: string }
       {/* Phone Button */}
       <a 
         href={`tel:${cleanPhone}`} 
-        className="w-14 h-14 bg-secondary text-white rounded-full flex items-center justify-center shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300 relative group"
+        className="w-14 h-14 bg-secondary text-white rounded-full flex items-center justify-center shadow-lg hover:shadow-xl hover:-translate-y-1 active:scale-90 transition-all duration-300 relative group"
         aria-label="اتصل بنا الآن"
       >
         <span className="absolute right-full mr-4 bg-black/80 text-white text-sm py-1 px-3 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">
