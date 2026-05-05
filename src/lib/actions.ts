@@ -79,6 +79,33 @@ export async function updateService(id: string, data: any) {
 export async function getPosts() {
   await dbConnect();
   const posts = await Post.find({}).sort({ createdAt: -1 });
+  if (posts.length === 0) {
+    const initialPosts = [
+      {
+        title: "كيف تتجنب انسداد البيارات في الشتاء؟",
+        excerpt: "تعرف على الخطوات الاستباقية لحماية منزلك من مشاكل الصرف الصحي الناتجة عن مياه الأمطار والبرودة الشديدة في مدينة الرياض.",
+        content: "المحتوى الكامل للمقالة سيكون هنا...",
+        category: "نصائح الصيانة",
+        image: "https://lh3.googleusercontent.com/aida-public/AB6AXuC8_NWMC6jzuFob-VJYJzaJpZ-am7fWduu70Qpwyr99OvneEdmAR9ZPFbsUG4Y0jOIUKnNvutZhhg9pLqiHixdjO_q-C-SFqJj6L3l9zv5GveGKov3gdfc810ZfeNGx6mD9Y8q1yU8IcWIxgJJgkGTRXVrM8s-8P_Vfug52az_gQ_1Uf8tFKfSmER78JG69R-tjNfjMawZWrVYQ-k8ElxCy9w3Bi2A_uZopGG9xMCyaMGe5u7BMxQCY3eV3YK9KnyIwCAb9PGoalKWK"
+      },
+      {
+        title: "أهمية تنظيف خزانات المياه بشكل دوري",
+        excerpt: "تأثير تراكم الرواسب على جودة مياه الشرب وصحتك العامة، وما هي المعايير الصحية التي نتبعها في تعقيم الخزانات الأرضية والعلوية.",
+        content: "المحتوى الكامل للمقالة سيكون هنا...",
+        category: "الصحة العامة",
+        image: "https://lh3.googleusercontent.com/aida-public/AB6AXuCuKueJuTBsHm72f4uvUYNVjt_2iffSk8MlqVu0deAEiCOb_8hC5YZbyNdGCaAH_84XtdAVRhbfEqh4hqFMNcbcusA_EEs69NLCFFnv1y_V2f6gUjs0nZA8h437eXWiY-OJrEl1cK4ZCSnlDBIgqwU_ZAjl8JByMqTNOdy4fS0VfJi_OXTTSHSCMHOkSDQ3TVwIbebasg-aS-EaKEhA4Cgah_t2IMFdRq2Y8MhsEaN7TuDxgYMqUpAcgndPN0NT-i1zRRngqUwREFkd"
+      },
+      {
+        title: "تقنيات الشفط الحديثة وحماية البيئة",
+        excerpt: "كيف نساهم في تقليل البصمة الكربونية من خلال استخدام شاحنات شفط متطورة تمنع التسرب والروائح الكريهة في الأحياء السكنية.",
+        content: "المحتوى الكامل للمقالة سيكون هنا...",
+        category: "البيئة",
+        image: "https://lh3.googleusercontent.com/aida-public/AB6AXuAr3avKqoHfbebsZy4qx38YOrrvG12wdsdhl2huqpnn1QwHIxbM_J3PWw2gEG5i_oQYbyx9UXiYQDWbIhFq57ZBXmfy0xX-jkDxid5_UQwRlELyqmU5Gh_c7o2FXA2FY982rep7s27eHnWfONqEe_4IU8ZhBD6-UkmPG5fQl84b8AX9V3Q7Kt4mym0-xtGCm8-yJEycQ6Vpqq8iDteaIVhS-RPN1WwUDcIUDqvLXmVl4s6AgERWUgd4qXNBu_5M6_pZ6O46lKl6Cr-b"
+      }
+    ];
+    await Post.insertMany(initialPosts);
+    return JSON.parse(JSON.stringify(initialPosts));
+  }
   return JSON.parse(JSON.stringify(posts));
 }
 
@@ -86,8 +113,16 @@ export async function addPost(data: any) {
   await dbConnect();
   const newPost = await Post.create(data);
   revalidatePath("/admin/blog");
-  revalidatePath("/blog"); // if exists
+  revalidatePath("/blog");
   return JSON.parse(JSON.stringify(newPost));
+}
+
+export async function updatePost(id: string, data: any) {
+  await dbConnect();
+  const updatedPost = await Post.findByIdAndUpdate(id, data, { new: true });
+  revalidatePath("/admin/blog");
+  revalidatePath("/blog");
+  return JSON.parse(JSON.stringify(updatedPost));
 }
 
 export async function deletePost(id: string) {
