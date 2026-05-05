@@ -11,6 +11,8 @@ export default function HomeSettingsPage() {
     siteDescription: "الحل الجذري والسريع لمشاكل البيارات والمجاري بالرياض.",
     logoUrl: "",
     logoSize: 60,
+    primaryColor: "#001e40",
+    secondaryColor: "#006c4a",
     ctaText: "اتصل بنا الآن",
     ctaLink: "tel:+966583165533"
   });
@@ -75,6 +77,33 @@ export default function HomeSettingsPage() {
               <button type="button" onClick={() => setSettings({...settings, logoUrl: ""})} className="text-error text-sm mt-2">إزالة الشعار</button>
             </div>
           )}
+        </div>
+
+        {/* Colors Section */}
+        <div className="space-y-4">
+          <h3 className="text-headline-md text-secondary border-b border-outline-variant pb-2">ألوان الموقع (الألوان الأساسية)</h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="space-y-2">
+              <label className="font-label-bold flex items-center gap-2">
+                اللون الرئيسي (Primary)
+                <div className="w-6 h-6 rounded border border-outline-variant" style={{ backgroundColor: settings.primaryColor }}></div>
+              </label>
+              <div className="flex gap-2">
+                <input type="color" className="p-1 rounded border border-outline-variant h-12 w-12 cursor-pointer" value={settings.primaryColor} onChange={e => setSettings({...settings, primaryColor: e.target.value})} />
+                <input type="text" className="w-full p-3 rounded-lg border border-outline-variant outline-none focus:border-primary dir-ltr uppercase" value={settings.primaryColor} onChange={e => setSettings({...settings, primaryColor: e.target.value})} />
+              </div>
+            </div>
+            <div className="space-y-2">
+              <label className="font-label-bold flex items-center gap-2">
+                اللون الثانوي (Secondary)
+                <div className="w-6 h-6 rounded border border-outline-variant" style={{ backgroundColor: settings.secondaryColor }}></div>
+              </label>
+              <div className="flex gap-2">
+                <input type="color" className="p-1 rounded border border-outline-variant h-12 w-12 cursor-pointer" value={settings.secondaryColor} onChange={e => setSettings({...settings, secondaryColor: e.target.value})} />
+                <input type="text" className="w-full p-3 rounded-lg border border-outline-variant outline-none focus:border-primary dir-ltr uppercase" value={settings.secondaryColor} onChange={e => setSettings({...settings, secondaryColor: e.target.value})} />
+              </div>
+            </div>
+          </div>
         </div>
 
         {/* Hero Section */}

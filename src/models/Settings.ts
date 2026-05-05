@@ -5,6 +5,8 @@ const SettingsSchema = new Schema({
   siteDescription: { type: String, required: true, default: "الحل الجذري والسريع لمشاكل البيارات والمجاري بالرياض." },
   logoUrl: { type: String, default: "" },
   logoSize: { type: Number, default: 60 },
+  primaryColor: { type: String, default: "#001e40" },
+  secondaryColor: { type: String, default: "#006c4a" },
   heroImages: [{ type: String }],
   ctaText: { type: String, default: "اتصل بنا الآن" },
   ctaLink: { type: String, default: "tel:+966583165533" },
