@@ -1,7 +1,9 @@
 import { getPostById, getPosts } from "@/lib/actions";
 import { notFound } from "next/navigation";
-import Link from "next/link";
 import Image from "next/image";
+import Link from "next/link";
+
+export const dynamic = "force-dynamic";
 
 export async function generateMetadata({ params }: { params: { id: string } }) {
   const post = await getPostById(params.id);

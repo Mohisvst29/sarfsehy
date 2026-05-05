@@ -99,7 +99,8 @@ export async function getPosts() {
       }
     ];
     await Post.insertMany(initialPosts);
-    return JSON.parse(JSON.stringify(initialPosts));
+    const seededPosts = await Post.find({}).sort({ createdAt: -1 });
+    return JSON.parse(JSON.stringify(seededPosts));
   }
   return JSON.parse(JSON.stringify(posts));
 }

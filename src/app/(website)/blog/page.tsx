@@ -2,6 +2,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { getPosts } from "@/lib/actions";
 
+export const dynamic = "force-dynamic";
+
 export default async function Blog() {
   const posts = await getPosts();
   
