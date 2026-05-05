@@ -55,7 +55,7 @@ export default function AdminLayoutClient({ children }: { children: React.ReactN
                 onClick={() => setIsMobileMenuOpen(false)}
                 className={`flex items-center gap-3 px-4 py-3 transition-all rounded-lg font-label-bold text-label-bold
                   ${isActive 
-                    ? "bg-secondary-container text-on-secondary-container" 
+                    ? "bg-secondary-container text-white" 
                     : "text-on-surface-variant hover:text-primary hover:bg-surface-container-high"}
                 `}
               >
@@ -69,7 +69,7 @@ export default function AdminLayoutClient({ children }: { children: React.ReactN
         <div className="px-4 mt-auto mb-4">
           <button 
             onClick={() => { setIsNewRequestModalOpen(true); setIsMobileMenuOpen(false); }}
-            className="w-full bg-primary text-on-primary font-cta text-cta py-3 rounded-xl flex items-center justify-center gap-2 shadow-sm hover:opacity-90 active:scale-95 transition-all"
+            className="w-full bg-primary text-white font-cta text-cta py-3 rounded-xl flex items-center justify-center gap-2 shadow-sm hover:opacity-90 active:scale-95 transition-all"
           >
             <span className="material-symbols-outlined">add</span>
             طلب جديد

@@ -137,7 +137,7 @@ export default function HomeSettingsPage() {
         </div>
 
         <div className="pt-6 flex justify-end">
-          <button type="submit" disabled={isSaving || isUploadingLogo} className="bg-primary text-on-primary px-8 py-3 rounded-xl font-bold flex items-center gap-2 hover:opacity-90 disabled:opacity-50 transition-all">
+          <button type="submit" disabled={isSaving || isUploadingLogo} className="bg-primary text-white px-8 py-3 rounded-xl font-bold flex items-center gap-2 hover:opacity-90 disabled:opacity-50 transition-all">
             {isSaving ? <span className="material-symbols-outlined animate-spin">sync</span> : <span className="material-symbols-outlined">save</span>}
             حفظ التغييرات
           </button>

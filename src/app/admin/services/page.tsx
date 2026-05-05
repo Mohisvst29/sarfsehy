@@ -79,7 +79,7 @@ export default function ServicesSettingsPage() {
     <div className="max-w-5xl mx-auto pb-10">
       <div className="flex justify-between items-center mb-6">
         <h2 className="text-headline-lg font-headline-lg text-primary">إدارة الخدمات</h2>
-        <button onClick={() => { setShowAdd(true); setEditingId(null); }} className="bg-primary text-on-primary px-6 py-2 rounded-xl font-bold flex items-center gap-2 hover:opacity-90 transition-all">
+        <button onClick={() => { setShowAdd(true); setEditingId(null); }} className="bg-primary text-white px-6 py-2 rounded-xl font-bold flex items-center gap-2 hover:opacity-90 transition-all">
           <span className="material-symbols-outlined">add</span>
           إضافة خدمة
         </button>

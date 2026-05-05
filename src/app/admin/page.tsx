@@ -53,7 +53,7 @@ export default function AdminDashboard() {
         <div className="bg-surface-container-low p-stack-md rounded-2xl border border-outline-variant flex flex-col gap-4">
           <h3 className="text-headline-md font-headline-md text-primary mb-2">الوصول السريع</h3>
           
-          <Link href="/admin/home-settings" className="flex items-center gap-4 p-4 bg-surface-container-lowest border border-outline-variant rounded-xl hover:bg-primary hover:text-on-primary transition-all group">
+          <Link href="/admin/home-settings" className="flex items-center gap-4 p-4 bg-surface-container-lowest border border-outline-variant rounded-xl hover:bg-primary hover:text-white transition-all group">
             <span className="material-symbols-outlined p-3 bg-primary-container/10 group-hover:bg-on-primary/20 rounded-lg" data-icon="imagesmode">imagesmode</span>
             <div className="text-right">
               <p className="font-label-bold text-label-bold">تغيير صور الرئيسية</p>
@@ -61,7 +61,7 @@ export default function AdminDashboard() {
             </div>
           </Link>
           
-          <Link href="/admin/blog" className="flex items-center gap-4 p-4 bg-surface-container-lowest border border-outline-variant rounded-xl hover:bg-primary hover:text-on-primary transition-all group">
+          <Link href="/admin/blog" className="flex items-center gap-4 p-4 bg-surface-container-lowest border border-outline-variant rounded-xl hover:bg-primary hover:text-white transition-all group">
             <span className="material-symbols-outlined p-3 bg-secondary-container/20 group-hover:bg-on-primary/20 rounded-lg" data-icon="post_add">post_add</span>
             <div className="text-right">
               <p className="font-label-bold text-label-bold">كتابة مقالة جديدة</p>
@@ -69,7 +69,7 @@ export default function AdminDashboard() {
             </div>
           </Link>
 
-          <Link href="/admin/contact-settings" className="flex items-center gap-4 p-4 bg-surface-container-lowest border border-outline-variant rounded-xl hover:bg-primary hover:text-on-primary transition-all group">
+          <Link href="/admin/contact-settings" className="flex items-center gap-4 p-4 bg-surface-container-lowest border border-outline-variant rounded-xl hover:bg-primary hover:text-white transition-all group">
             <span className="material-symbols-outlined p-3 bg-tertiary-fixed/20 group-hover:bg-on-primary/20 rounded-lg" data-icon="contact_phone">contact_phone</span>
             <div className="text-right">
               <p className="font-label-bold text-label-bold">تحديث أرقام التواصل</p>
@@ -79,7 +79,7 @@ export default function AdminDashboard() {
         </div>
 
         {/* System Status Overview */}
-        <div className="bg-primary text-on-primary p-8 rounded-2xl shadow-lg relative overflow-hidden flex flex-col justify-center">
+        <div className="bg-primary text-white p-8 rounded-2xl shadow-lg relative overflow-hidden flex flex-col justify-center">
           <div className="relative z-10">
             <p className="text-label-bold opacity-80 mb-2">حالة النظام</p>
             <h4 className="text-headline-lg font-bold">الموقع يعمل بكفاءة 100%</h4>

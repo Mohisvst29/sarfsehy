@@ -30,11 +30,11 @@ export default async function Blog() {
                 src={featuredPost.image || "https://lh3.googleusercontent.com/aida-public/AB6AXuAx88XBNpoHmloeR3p8IhfSCn8nLXAPc74leqKmTUGLTM6Um1IPxG1NYf_6wrE-rQDAY21pexoca6LlsU-Sx3YGHlvK7zwT8DrGpgw7Jv-YwNlXaHv9aUZI0D4FY_dvn2tINJgSww03TxOWeWFjnHtif7T0sQuj4wOKrwtoRD7rbj1ydACPG4Icopwdg6H70S2h1ctEXZybMUKf8PxGKQRhxgxaQdkT7Ifkd5BG4R4m7XFwjooyeouUFEVXjKRrNBdQuFL0WmcWe-DN"}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/40 to-transparent"></div>
-              <div className="absolute bottom-0 p-stack-lg text-on-primary w-full md:w-2/3">
-                <span className="inline-block bg-secondary text-on-secondary px-3 py-1 rounded-full text-label-bold mb-4">أحدث المقالات • {featuredPost.category}</span>
+              <div className="absolute bottom-0 p-stack-lg text-white w-full md:w-2/3">
+                <span className="inline-block bg-secondary text-white px-3 py-1 rounded-full text-label-bold mb-4">أحدث المقالات • {featuredPost.category}</span>
                 <h2 className="font-headline-lg text-headline-lg mb-4">{featuredPost.title}</h2>
                 <p className="font-body-md text-body-md mb-6 opacity-90">{featuredPost.excerpt}</p>
-                <Link href="#" className="bg-secondary-fixed text-on-secondary-fixed px-8 py-3 rounded-lg font-cta text-cta inline-flex w-max items-center gap-2 hover:bg-secondary-fixed-dim transition-colors active:scale-95">
+                <Link href="#" className="bg-secondary-fixed text-white-fixed px-8 py-3 rounded-lg font-cta text-cta inline-flex w-max items-center gap-2 hover:bg-secondary-fixed-dim transition-colors active:scale-95">
                   اقرأ المزيد
                   <span className="material-symbols-outlined">arrow_back</span>
                 </Link>
@@ -46,7 +46,7 @@ export default async function Blog() {
         {/* Categories Filter */}
         <section className="mb-stack-md" data-aos="fade-up">
           <div className="flex flex-wrap items-center gap-4 border-b border-outline-variant pb-stack-sm">
-            <button className="px-6 py-2 bg-primary text-on-primary rounded-full font-label-bold">الكل</button>
+            <button className="px-6 py-2 bg-primary text-white rounded-full font-label-bold">الكل</button>
             <button className="px-6 py-2 text-on-surface-variant hover:bg-surface-container rounded-full font-label-bold transition-colors">نصائح الصيانة</button>
             <button className="px-6 py-2 text-on-surface-variant hover:bg-surface-container rounded-full font-label-bold transition-colors">الصحة العامة</button>
             <button className="px-6 py-2 text-on-surface-variant hover:bg-surface-container rounded-full font-label-bold transition-colors">البيئة</button>
@@ -88,14 +88,14 @@ export default async function Blog() {
 <section className="bg-primary-container rounded-2xl p-stack-lg text-center mb-stack-lg border border-primary relative overflow-hidden" data-aos="zoom-in">
 <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-10"></div>
 <div className="relative z-10">
-<h2 className="font-headline-lg text-headline-lg text-on-primary mb-4">هل تحتاج إلى مساعدة فورية؟</h2>
-<p className="font-body-lg text-body-lg text-on-primary-container mb-8 max-w-xl mx-auto">فريق الطوارئ متاح على مدار الساعة للتعامل مع كافة مشاكل الصرف الصحي والفيضانات في الرياض.</p>
+<h2 className="font-headline-lg text-headline-lg text-white mb-4">هل تحتاج إلى مساعدة فورية؟</h2>
+<p className="font-body-lg text-body-lg text-white mb-8 max-w-xl mx-auto">فريق الطوارئ متاح على مدار الساعة للتعامل مع كافة مشاكل الصرف الصحي والفيضانات في الرياض.</p>
 <div className="flex flex-col md:flex-row justify-center gap-4">
-<a className="inline-flex items-center justify-center gap-3 bg-secondary-fixed text-on-secondary-fixed px-10 py-4 rounded-xl font-cta text-cta hover:bg-secondary-fixed-dim transition-colors group" href="tel:+966583165533">
+<a className="inline-flex items-center justify-center gap-3 bg-secondary-fixed text-white-fixed px-10 py-4 rounded-xl font-cta text-cta hover:bg-secondary-fixed-dim transition-colors group" href="tel:+966583165533">
 <span className="material-symbols-outlined group-hover:animate-pulse">phone_in_talk</span>
                         اتصل الآن للطوارئ
                     </a>
-<Link href="/contact" className="inline-flex items-center justify-center gap-3 border-2 border-on-primary text-on-primary px-10 py-4 rounded-xl font-cta text-cta hover:bg-on-primary/10 transition-colors">
+<Link href="/contact" className="inline-flex items-center justify-center gap-3 border-2 border-on-primary text-white px-10 py-4 rounded-xl font-cta text-cta hover:bg-on-primary/10 transition-colors">
                         طلب تسعيرة صيانة
                     </Link>
 </div>

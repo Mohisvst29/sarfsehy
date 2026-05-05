@@ -80,7 +80,7 @@ export default function BlogSettingsPage() {
     <div className="max-w-5xl mx-auto pb-10">
       <div className="flex justify-between items-center mb-6">
         <h2 className="text-headline-lg font-headline-lg text-primary">إدارة المقالات</h2>
-        <button onClick={() => { setShowAdd(true); setEditingId(null); }} className="bg-primary text-on-primary px-6 py-2 rounded-xl font-bold flex items-center gap-2 hover:opacity-90 transition-all">
+        <button onClick={() => { setShowAdd(true); setEditingId(null); }} className="bg-primary text-white px-6 py-2 rounded-xl font-bold flex items-center gap-2 hover:opacity-90 transition-all">
           <span className="material-symbols-outlined">post_add</span>
           مقال جديد
         </button>
@@ -155,7 +155,7 @@ export default function BlogSettingsPage() {
                 </td>
                 <td className="px-6 py-4 font-bold text-primary">{post.title}</td>
                 <td className="px-6 py-4">
-                  <span className="bg-secondary-container text-on-secondary-container px-3 py-1 rounded-full text-xs">{post.category || 'عام'}</span>
+                  <span className="bg-secondary-container text-white px-3 py-1 rounded-full text-xs">{post.category || 'عام'}</span>
                 </td>
                 <td className="px-6 py-4 text-on-surface-variant dir-ltr text-right">{new Date(post.createdAt || Date.now()).toLocaleDateString("ar-EG")}</td>
                 <td className="px-6 py-4 flex justify-center gap-2">

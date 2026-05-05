@@ -14,18 +14,18 @@ export default function Home() {
 </div>
 <div className="relative z-10 max-w-7xl mx-auto px-8 w-full grid md:grid-cols-2 gap-12 items-center">
 <div className="space-y-6">
-<div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-secondary text-on-secondary text-label-bold font-label-bold">
+<div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-secondary text-white text-label-bold font-label-bold">
 <span className="material-symbols-outlined text-sm" style={{ fontVariationSettings: "'FILL' 1" }}>verified</span>
                     خدمة معتمدة في الرياض
                 </div>
 <h1 className="font-headline-xl text-headline-xl text-white leading-tight">
                     الحل الجذري والسريع لمشاكل البيارات والمجاري بالرياض
                 </h1>
-<p className="font-body-lg text-body-lg text-on-primary-container max-w-xl">
+<p className="font-body-lg text-body-lg text-white max-w-xl">
                     نمتلك أسطولاً ضخماً من وايتات الشفط وفريقاً محترفاً لإعادة بيئتكم نظيفة وآمنة في وقت قياسي. نحن هنا لخدمتكم على مدار الساعة.
                 </p>
 <div className="flex flex-wrap gap-4 pt-4">
-<a href="tel:966583165533" className="bg-secondary text-on-secondary px-8 py-4 rounded-xl font-cta text-cta shadow-xl hover:shadow-2xl transition-all flex items-center gap-3">
+<a href="tel:966583165533" className="bg-secondary text-white px-8 py-4 rounded-xl font-cta text-cta shadow-xl hover:shadow-2xl transition-all flex items-center gap-3">
 <span className="material-symbols-outlined">call</span>
                         اتصل بنا الآن
                     </a>
@@ -42,25 +42,25 @@ export default function Home() {
 <div className="text-white text-3xl font-black mb-1" dir="ltr">
   <AnimatedCounter to={24} suffix="/7" />
 </div>
-<div className="text-on-primary-container text-sm">متاحون دائماً</div>
+<div className="text-white text-sm">متاحون دائماً</div>
 </div>
 <div className="p-6 bg-white/10 rounded-2xl border border-white/5 text-center">
 <div className="text-white text-3xl font-black mb-1" dir="ltr">
   <AnimatedCounter to={150} prefix="+" />
 </div>
-<div className="text-on-primary-container text-sm">وايت شفط</div>
+<div className="text-white text-sm">وايت شفط</div>
 </div>
 <div className="p-6 bg-white/10 rounded-2xl border border-white/5 text-center">
 <div className="text-white text-3xl font-black mb-1" dir="ltr">
   <AnimatedCounter to={30} />
 </div>
-<div className="text-on-primary-container text-sm">دقيقة وصول</div>
+<div className="text-white text-sm">دقيقة وصول</div>
 </div>
 <div className="p-6 bg-white/10 rounded-2xl border border-white/5 text-center">
 <div className="text-white text-3xl font-black mb-1" dir="ltr">
   <AnimatedCounter to={100} suffix="%" />
 </div>
-<div className="text-on-primary-container text-sm">ضمان الخدمة</div>
+<div className="text-white text-sm">ضمان الخدمة</div>
 </div>
 </div>
 </div>
@@ -230,11 +230,11 @@ export default function Home() {
 </div>
 </div>
 <h2 className="font-headline-lg text-headline-lg text-white">لا تنتظر الكارثة، نحن متاحون على مدار الساعة</h2>
-<p className="font-body-lg text-body-lg text-on-primary-container max-w-2xl mx-auto">
+<p className="font-body-lg text-body-lg text-white max-w-2xl mx-auto">
                         انسداد البيارات قد يؤدي إلى أضرار جسيمة في البنية التحتية وانتشار الروائح. اتصل بنا الآن ليرسل لك فريقنا أقرب وايت شفط لموقعك.
                     </p>
 <div className="flex flex-col sm:flex-row justify-center items-center gap-6 pt-4">
-<a className="bg-secondary text-on-secondary px-10 py-5 rounded-2xl font-cta text-headline-md shadow-2xl flex items-center gap-4 hover:scale-105 transition-transform" href="tel:966583165533">
+<a className="bg-secondary text-white px-10 py-5 rounded-2xl font-cta text-headline-md shadow-2xl flex items-center gap-4 hover:scale-105 transition-transform" href="tel:966583165533">
 <span className="material-symbols-outlined">phone_forwarded</span>
                             966583165533
                         </a>

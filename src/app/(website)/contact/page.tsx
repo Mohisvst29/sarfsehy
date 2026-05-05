@@ -9,7 +9,7 @@ export default function Contact() {
 {/* Hero Section */}
 <section className="mb-stack-lg grid grid-cols-1 lg:grid-cols-2 gap-12 items-center" data-aos="fade-up">
 <div>
-<span className="inline-flex items-center gap-2 bg-secondary-container text-on-secondary-container px-3 py-1 rounded-full text-label-bold mb-4">
+<span className="inline-flex items-center gap-2 bg-secondary-container text-white px-3 py-1 rounded-full text-label-bold mb-4">
 <span className="material-symbols-outlined text-sm" data-icon="check_circle" style={{ fontVariationSettings: "'FILL' 1" }}>check_circle</span>
                     متاح الآن في جميع أحياء الرياض
                 </span>
@@ -115,9 +115,9 @@ export default function Contact() {
 {/* 24/7 Card */}
 <div className="bg-primary-container text-white p-8 rounded-3xl relative overflow-hidden">
 <div className="relative z-10">
-<span className="material-symbols-outlined text-5xl mb-4 text-on-primary-container" data-icon="schedule" style={{ fontVariationSettings: "'FILL' 1" }}>schedule</span>
+<span className="material-symbols-outlined text-5xl mb-4 text-white" data-icon="schedule" style={{ fontVariationSettings: "'FILL' 1" }}>schedule</span>
 <h3 className="text-headline-md font-headline-md mb-2">نعمل على مدار الساعة</h3>
-<p className="text-on-primary-container leading-relaxed">
+<p className="text-white leading-relaxed">
                             فريق الطوارئ لدينا متواجد في كافة مناوبات الليل والنهار، حتى في العطلات الرسمية لضمان سلامة منزلك.
                         </p>
 </div>
