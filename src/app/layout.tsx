@@ -32,6 +32,8 @@ export async function generateMetadata(): Promise<Metadata> {
   };
 }
 
+import FloatingContact from "@/components/FloatingContact";
+
 export default async function RootLayout({
   children,
 }: Readonly<{
@@ -52,7 +54,7 @@ export default async function RootLayout({
               "image": "https://darub-alqimma.com/icon.svg",
               "@id": "https://darub-alqimma.com",
               "url": "https://darub-alqimma.com",
-              "telephone": "+966583165533",
+              "telephone": settings?.phone || "+966583165533",
               "address": {
                 "@type": "PostalAddress",
                 "streetAddress": "الرياض",
@@ -154,6 +156,8 @@ export default async function RootLayout({
           )}
           
           {children}
+          
+          <FloatingContact phoneNumber={settings?.phone || "+966583165533"} />
       </body>
     </html>
   );
