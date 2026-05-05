@@ -34,7 +34,7 @@ export default async function Blog() {
                 <span className="inline-block bg-secondary text-white px-3 py-1 rounded-full text-label-bold mb-4">أحدث المقالات • {featuredPost.category}</span>
                 <h2 className="font-headline-lg text-headline-lg mb-4">{featuredPost.title}</h2>
                 <p className="font-body-md text-body-md mb-6 opacity-90">{featuredPost.excerpt}</p>
-                <Link href="#" className="bg-secondary-fixed text-white-fixed px-8 py-3 rounded-lg font-cta text-cta inline-flex w-max items-center gap-2 hover:bg-secondary-fixed-dim transition-colors active:scale-95">
+                <Link href={`/blog/${featuredPost._id}`} className="bg-secondary-fixed text-white-fixed px-8 py-3 rounded-lg font-cta text-cta inline-flex w-max items-center gap-2 hover:bg-secondary-fixed-dim transition-colors active:scale-95">
                   اقرأ المزيد
                   <span className="material-symbols-outlined">arrow_back</span>
                 </Link>
@@ -71,10 +71,10 @@ export default async function Blog() {
                 </div>
                 <h3 className="font-headline-md text-headline-md text-primary mb-2">{post.title}</h3>
                 <p className="font-body-md text-body-md text-on-surface-variant mb-4 line-clamp-3">{post.excerpt}</p>
-                <button className="text-secondary font-cta text-cta flex items-center gap-1 hover:gap-3 transition-all">
+                <Link href={`/blog/${post._id}`} className="text-secondary font-cta text-cta flex items-center gap-1 hover:gap-3 transition-all inline-block w-max">
                   <span>اقرأ المزيد</span>
                   <span className="material-symbols-outlined">chevron_left</span>
-                </button>
+                </Link>
               </div>
             </div>
           ))}

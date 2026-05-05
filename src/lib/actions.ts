@@ -104,6 +104,16 @@ export async function getPosts() {
   return JSON.parse(JSON.stringify(posts));
 }
 
+export async function getPostById(id: string) {
+  await dbConnect();
+  try {
+    const post = await Post.findById(id);
+    return post ? JSON.parse(JSON.stringify(post)) : null;
+  } catch (error) {
+    return null;
+  }
+}
+
 export async function addPost(data: any) {
   await dbConnect();
   const newPost = await Post.create(data);
