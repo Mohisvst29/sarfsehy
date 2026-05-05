@@ -106,17 +106,89 @@ export default function HomeSettingsPage() {
           </div>
         </div>
 
-        {/* Hero Section */}
+        {/* Hero Section Slides */}
         <div className="space-y-4">
-          <h3 className="text-headline-md text-secondary border-b border-outline-variant pb-2">القسم الرئيسي (الواجهة)</h3>
+          <div className="flex justify-between items-center border-b border-outline-variant pb-2">
+            <h3 className="text-headline-md text-secondary">شرائح الواجهة الرئيسية (Hero Slider)</h3>
+            <button type="button" onClick={() => setSettings({...settings, heroSlides: [...(settings.heroSlides || []), { image: "", heading: "", description: "" }]})} className="bg-secondary-container text-on-secondary-container px-4 py-1 rounded-lg text-sm font-bold flex items-center gap-1 hover:opacity-90">
+              <span className="material-symbols-outlined text-sm">add</span>
+              إضافة شريحة
+            </button>
+          </div>
+
+          {(settings.heroSlides || []).map((slide: any, index: number) => (
+            <div key={index} className="p-4 border border-outline-variant rounded-xl bg-white space-y-4 relative">
+              <button type="button" onClick={() => {
+                const newSlides = [...settings.heroSlides];
+                newSlides.splice(index, 1);
+                setSettings({...settings, heroSlides: newSlides});
+              }} className="absolute top-4 left-4 text-error hover:bg-error/10 p-1 rounded-lg transition-colors">
+                <span className="material-symbols-outlined">delete</span>
+              </button>
+              
+              <div className="font-bold text-primary mb-2">الشريحة #{index + 1}</div>
+              
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div className="space-y-2">
+                  <label className="font-label-bold">صورة الخلفية</label>
+                  <div className="flex items-center gap-2">
+                    <input type="file" accept="image/*" onChange={async (e) => {
+                      const file = e.target.files?.[0];
+                      if (!file) return;
+                      const formData = new FormData();
+                      formData.append("file", file);
+                      try {
+                        const res: any = await uploadImage(formData);
+                        const newSlides = [...settings.heroSlides];
+                        newSlides[index].image = res.url;
+                        setSettings({...settings, heroSlides: newSlides});
+                      } catch (err) {
+                        alert("حدث خطأ في رفع الصورة");
+                      }
+                    }} className="w-full p-2 rounded-lg border border-outline-variant outline-none focus:border-primary text-sm" />
+                  </div>
+                  {slide.image && <img src={slide.image} alt="Preview" className="w-full h-24 object-cover rounded-lg border border-outline-variant" />}
+                </div>
+                
+                <div className="space-y-4">
+                  <div className="space-y-1">
+                    <label className="font-label-bold text-sm">العنوان الرئيسي</label>
+                    <input type="text" className="w-full p-2 rounded-lg border border-outline-variant outline-none focus:border-primary" value={slide.heading || ""} onChange={(e) => {
+                      const newSlides = [...settings.heroSlides];
+                      newSlides[index].heading = e.target.value;
+                      setSettings({...settings, heroSlides: newSlides});
+                    }} />
+                  </div>
+                  <div className="space-y-1">
+                    <label className="font-label-bold text-sm">النص الوصفي</label>
+                    <textarea className="w-full p-2 rounded-lg border border-outline-variant outline-none focus:border-primary h-16" value={slide.description || ""} onChange={(e) => {
+                      const newSlides = [...settings.heroSlides];
+                      newSlides[index].description = e.target.value;
+                      setSettings({...settings, heroSlides: newSlides});
+                    }} />
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+          {(!settings.heroSlides || settings.heroSlides.length === 0) && (
+            <div className="text-center p-8 bg-surface-container-low rounded-xl border border-dashed border-outline-variant text-on-surface-variant">
+              لا توجد شرائح حالياً. استخدم الزر بالأعلى لإضافة الشريحة الأولى. (في حال عدم وجود شرائح سيتم عرض التصميم الافتراضي)
+            </div>
+          )}
+        </div>
+
+        {/* Global SEO / Fallback Section */}
+        <div className="space-y-4 mt-8 pt-8 border-t border-outline-variant">
+          <h3 className="text-headline-md text-secondary border-b border-outline-variant pb-2">نصوص الموقع الافتراضية (ومحركات البحث)</h3>
           
           <div className="space-y-2">
-            <label className="font-label-bold">العنوان الرئيسي</label>
+            <label className="font-label-bold">العنوان العام للموقع (Site Title)</label>
             <input type="text" className="w-full p-3 rounded-lg border border-outline-variant outline-none focus:border-primary" value={settings.siteTitle} onChange={e => setSettings({...settings, siteTitle: e.target.value})} />
           </div>
           
           <div className="space-y-2">
-            <label className="font-label-bold">النص الوصفي</label>
+            <label className="font-label-bold">الوصف العام (Site Description)</label>
             <textarea className="w-full p-3 rounded-lg border border-outline-variant outline-none focus:border-primary h-24" value={settings.siteDescription} onChange={e => setSettings({...settings, siteDescription: e.target.value})} />
           </div>
         </div>

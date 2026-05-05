@@ -7,7 +7,11 @@ const SettingsSchema = new Schema({
   logoSize: { type: Number, default: 60 },
   primaryColor: { type: String, default: "#001e40" },
   secondaryColor: { type: String, default: "#006c4a" },
-  heroImages: [{ type: String }],
+  heroSlides: [{ 
+    image: String,
+    heading: String,
+    description: String
+  }],
   ctaText: { type: String, default: "اتصل بنا الآن" },
   ctaLink: { type: String, default: "tel:+966583165533" },
   phone: { type: String, default: "+966583165533" },
