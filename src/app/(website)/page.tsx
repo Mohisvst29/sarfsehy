@@ -6,8 +6,49 @@ import { getSettings } from "@/lib/actions";
 
 export default async function Home() {
   const settings = await getSettings();
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Service",
+        "serviceType": "شفط بيارات وتسليك مجاري بالرياض",
+        "provider": {
+          "@type": "LocalBusiness",
+          "name": "بيارات الرياض",
+          "url": "https://www.byaratriyadh.com"
+        },
+        "areaServed": {
+          "@type": "City",
+          "name": "الرياض"
+        }
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "هل توفرون خدمة شفط بيارات 24 ساعة بالرياض؟",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "نعم، نقدم خدمات شفط بيارات وتسليك مجاري على مدار 24 ساعة في جميع أحياء الرياض للتعامل مع الحالات الطارئة."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "كم سعر وايت شفط الصرف الصحي بالرياض؟",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "تعتمد الأسعار على حجم الوايت ونوع المشكلة، لكننا نتميز بتقديم أفضل أسعار شركات شفط البيارات بالرياض مع ضمان جودة الخدمة."
+            }
+          }
+        ]
+      }
+    ]
+  };
+
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       
 <HeroCarousel settings={settings} />
 {/* Trust Section (Why Choose Us) - Bento Layout */}
@@ -28,8 +69,8 @@ export default async function Home() {
                             ندرك أن مشاكل الصرف الصحي لا تحتمل التأجيل، لذا نضمن وصول فريقنا إليكم في غضون 30 دقيقة من الاتصال في أي مكان بالرياض.
                         </p>
 </div>
-<div className="w-full md:w-1/2 aspect-video rounded-2xl overflow-hidden">
-<img className="w-full h-full object-cover" data-alt="A professional technician in high-visibility gear holding a modern tablet device, coordinating emergency response efforts in a clean, high-tech control room environment. The scene is bright and professional, emphasizing the speed and technological precision of the service dispatch center. Soft, high-key lighting creates a sense of calm reliability." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAD5PPCfKQ299mJnjQYRma4X1qI7rJMnNVXayYacRwANJOeZ7xhZ8L4TmabwfA2r7m8B_bjv8uwWbgs1wosW6yRsITydln3AiLzHAjEk14EXTESGX2WmaGpJflI1lqf3ff1Rlce3tpGbV9N2oUebrSzjCxYjVd420bNnvISOmF2mk2NF76beWIvk5GLsnnDBjlCX2BIrUO0-g2nsKFI-VIjbWxA6h4nurKNe2tQOqBcXJlKI-vYqbeOPm2NP0dJnpIzYU7go6lwNqV2"/>
+<div className="w-full md:w-1/2 aspect-video rounded-2xl overflow-hidden relative">
+<Image fill className="object-cover" alt="شركة شفط بيارات بالرياض واستجابة سريعة" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAD5PPCfKQ299mJnjQYRma4X1qI7rJMnNVXayYacRwANJOeZ7xhZ8L4TmabwfA2r7m8B_bjv8uwWbgs1wosW6yRsITydln3AiLzHAjEk14EXTESGX2WmaGpJflI1lqf3ff1Rlce3tpGbV9N2oUebrSzjCxYjVd420bNnvISOmF2mk2NF76beWIvk5GLsnnDBjlCX2BIrUO0-g2nsKFI-VIjbWxA6h4nurKNe2tQOqBcXJlKI-vYqbeOPm2NP0dJnpIzYU7go6lwNqV2"/>
 </div>
 </div>
 </div>
@@ -100,7 +141,7 @@ export default async function Home() {
 {/* Service 1 */}
 <div className="bg-white rounded-2xl overflow-hidden border border-slate-100 shadow-sm group hover:-translate-y-2 transition-all duration-300">
 <div className="h-56 relative overflow-hidden">
-<img className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="Close up of high-pressure industrial suction equipment in action, showing the heavy-duty reinforced hoses and mechanical components. The image is crisp and professional, captured with a shallow depth of field to emphasize the industrial precision and power of the equipment. Lighting is natural and bright, conveying cleanliness and efficiency." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDcOveb0JXXVQoIiqKb8R-V84kDHSGM2awxJo9LfszkuPsD9dqiVH57wsJMjVwuw4iWe1j8GSC-rPlBzJHLhgBQEJUjWcj76mMrw8iNNfEAS3Bfjkjkh4RTIWID9i8Yk896RW_Kgs7yBAwhcMnmaO8ganawnvIA4NvPXv4CHN5z_Wxt7OuvHV40R6lxpV47inkQd7DMKHEJe-yVZ5jK18K7Gi_gcH3_wqSNnHqB_awcgvizoHKOyiDaU4OHUOyQjmGuesG8ceoyf5j6"/>
+<Image fill className="object-cover group-hover:scale-110 transition-transform duration-500" alt="وايت شفط بالرياض" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDcOveb0JXXVQoIiqKb8R-V84kDHSGM2awxJo9LfszkuPsD9dqiVH57wsJMjVwuw4iWe1j8GSC-rPlBzJHLhgBQEJUjWcj76mMrw8iNNfEAS3Bfjkjkh4RTIWID9i8Yk896RW_Kgs7yBAwhcMnmaO8ganawnvIA4NvPXv4CHN5z_Wxt7OuvHV40R6lxpV47inkQd7DMKHEJe-yVZ5jK18K7Gi_gcH3_wqSNnHqB_awcgvizoHKOyiDaU4OHUOyQjmGuesG8ceoyf5j6"/>
 <div className="absolute top-4 right-4 bg-emerald-500 text-white text-[10px] font-bold px-3 py-1 rounded-full flex items-center gap-1">
 <span className="w-2 h-2 bg-white rounded-full animate-pulse"></span>
                             متاح الآن
@@ -123,7 +164,7 @@ export default async function Home() {
 {/* Service 2 */}
 <div className="bg-white rounded-2xl overflow-hidden border border-slate-100 shadow-sm group hover:-translate-y-2 transition-all duration-300">
 <div className="h-56 relative overflow-hidden">
-<img className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="A clean and sanitized underground water tank with modern filtration and maintenance equipment visible. The lighting is bright and industrial, highlighting the pristine condition of the tank after professional cleaning. The aesthetic is modern and reassuring, emphasizing health, safety, and thorough maintenance standards." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB5uwptGI6KpQ_-g7AFl4fqjD3-2VvyBYnD6kMBy-1mZd5653N0QUa8CFR38PxnKbWVF4HNfQnIIufFhmKNjRBU-T_wtaWS3CA5-edNxD92DsL0YNiVPuAfA1GVcKwmjhtt_nD7xzf7-TLgkxqDOgPH1nv30YU3Pe3tP_yhU87iY8r2jMl32bR6FCCuN05fiB8Gnui0qkEoV4GPPXmUIw879D2AwGl0FguZf_NfPVmC-ITjc-Smy9HuelHbzQkyIGHvpvJYRpJ2aCBF"/>
+<Image fill className="object-cover group-hover:scale-110 transition-transform duration-500" alt="تنظيف بيارات بالرياض" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB5uwptGI6KpQ_-g7AFl4fqjD3-2VvyBYnD6kMBy-1mZd5653N0QUa8CFR38PxnKbWVF4HNfQnIIufFhmKNjRBU-T_wtaWS3CA5-edNxD92DsL0YNiVPuAfA1GVcKwmjhtt_nD7xzf7-TLgkxqDOgPH1nv30YU3Pe3tP_yhU87iY8r2jMl32bR6FCCuN05fiB8Gnui0qkEoV4GPPXmUIw879D2AwGl0FguZf_NfPVmC-ITjc-Smy9HuelHbzQkyIGHvpvJYRpJ2aCBF"/>
 </div>
 <div className="p-8 space-y-4">
 <h3 className="font-headline-md text-headline-md text-primary">تنظيف الخزانات</h3>
@@ -142,7 +183,7 @@ export default async function Home() {
 {/* Service 3 */}
 <div className="bg-white rounded-2xl overflow-hidden border border-slate-100 shadow-sm group hover:-translate-y-2 transition-all duration-300">
 <div className="h-56 relative overflow-hidden">
-<img className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="A professional plumber working on complex piping systems using high-quality chrome tools. The scene is organized and clinical, reflecting professional plumbing maintenance and repair services. Focus is on the quality of the workmanship and the tools used. The color palette is composed of metallic silvers and deep blues." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD8PN3k2-j6pqJaoDL6VyPY2rAQp_fQ4w7cwyWjuTcXylNc259eWwVflMPnf93yHWKiutLX2pwluYYXWaoHJ4iiNKm1Mi8fUFanWiQh0f6JqJXxKUBHnl-jOUZoI1pc9awH9DYyAEUTTFq620oM3oQ-DXYGFx3Y0GRZGlNk9blsgAVdN6GMLLImSvf-IXH-OJl7CUVZGOYeM09K4SL1PuQLiIIbwu3Fa2C8NSrRdpw_ALjLM10aynnYDFsSJrFHRRRiUirCbVsb7bxM"/>
+<Image fill className="object-cover group-hover:scale-110 transition-transform duration-500" alt="تسليك مجاري بالرياض" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD8PN3k2-j6pqJaoDL6VyPY2rAQp_fQ4w7cwyWjuTcXylNc259eWwVflMPnf93yHWKiutLX2pwluYYXWaoHJ4iiNKm1Mi8fUFanWiQh0f6JqJXxKUBHnl-jOUZoI1pc9awH9DYyAEUTTFq620oM3oQ-DXYGFx3Y0GRZGlNk9blsgAVdN6GMLLImSvf-IXH-OJl7CUVZGOYeM09K4SL1PuQLiIIbwu3Fa2C8NSrRdpw_ALjLM10aynnYDFsSJrFHRRRiUirCbVsb7bxM"/>
 </div>
 <div className="p-8 space-y-4">
 <h3 className="font-headline-md text-headline-md text-primary">صيانة السباكة</h3>
@@ -189,6 +230,33 @@ export default async function Home() {
 </div>
 </div>
 </div>
+</section>
+
+{/* SEO Text Block & Neighborhood Links */}
+<section className="bg-white py-16 border-t border-slate-100">
+  <div className="max-w-7xl mx-auto px-8">
+    <div className="prose prose-lg prose-slate max-w-none text-on-surface-variant mb-12">
+      <h1 className="text-primary font-headline-lg text-3xl mb-4">أفضل شركة شفط بيارات بالرياض</h1>
+      <p>
+        إذا كنت تبحث عن <strong>شركة شفط بيارات بالرياض</strong> ذات مصداقية عالية وسرعة استجابة، فإن "بيارات الرياض" هي خيارك الأول. نحن نوفر <strong>وايت شفط بالرياض</strong> مجهز بأحدث تقنيات الشفط وسحب المياه لحل مشكلة طفح البيارات بشكل جذري.
+      </p>
+      <h2 className="text-primary font-headline-md text-2xl mt-8 mb-4">لماذا نحن أفضل شركة تنظيف وتسليك مجاري بالرياض؟</h2>
+      <p>
+        بفضل الله ثم بخبرة فريقنا، نقدم خدمات متكاملة تشمل <strong>شفط صرف صحي الرياض</strong>، <strong>تسليك مجاري بالرياض</strong>، وتخليص أنابيب الصرف من الدهون والتراكمات الصلبة التي تسبب الانسداد المتكرر. فريقنا مستعد لتقديم خدمات <strong>شفط بيارات 24 ساعة بالرياض</strong> في أوقات الطوارئ، وكل ذلك بأسعار تنافسية. بمجرد الاتصال على <strong>رقم شفط بيارات بالرياض</strong> الموضح بالموقع، يتم توجيه أقرب فريق إليك فوراً.
+      </p>
+    </div>
+
+    <div className="space-y-4">
+      <h3 className="text-secondary font-headline-md text-xl">تغطيتنا في أحياء الرياض (Local SEO)</h3>
+      <div className="flex flex-wrap gap-3">
+        {['الياسمين', 'النرجس', 'الرمال', 'العارض', 'السويدي', 'النسيم', 'الروضة', 'المونسية'].map((neighborhood) => (
+          <Link key={neighborhood} href={`/riyadh/al-${neighborhood === 'الياسمين' ? 'yasmin' : neighborhood === 'النرجس' ? 'narjis' : neighborhood === 'الرمال' ? 'rimal' : neighborhood === 'العارض' ? 'arid' : neighborhood === 'السويدي' ? 'suwaidi' : neighborhood === 'النسيم' ? 'naseem' : neighborhood === 'الروضة' ? 'rawdah' : 'munsiyah'}`} className="px-4 py-2 bg-surface-container-low text-primary rounded-full hover:bg-secondary hover:text-white transition-colors border border-outline-variant text-sm font-label-bold">
+            شفط بيارات حي {neighborhood}
+          </Link>
+        ))}
+      </div>
+    </div>
+  </div>
 </section>
 
     </>

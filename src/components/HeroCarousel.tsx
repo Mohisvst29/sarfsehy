@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import AnimatedCounter from "./AnimatedCounter";
 
@@ -37,7 +38,7 @@ export default function HeroCarousel({ settings }: { settings: any }) {
           transition={{ duration: 1 }}
           className="absolute inset-0 z-0"
         >
-          <img className="w-full h-full object-cover opacity-30" src={slides[currentIndex].image} alt="Hero" />
+          <Image fill priority className="object-cover opacity-30" src={slides[currentIndex].image} alt={slides[currentIndex].heading} />
           <div className="absolute inset-0 bg-gradient-to-l from-primary-container via-primary-container/80 to-transparent"></div>
         </motion.div>
       </AnimatePresence>

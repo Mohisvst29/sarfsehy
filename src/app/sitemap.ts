@@ -34,5 +34,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'weekly',
       priority: 0.7,
     },
+    ...['al-yasmin', 'al-narjis', 'al-rimal', 'al-arid', 'al-suwaidi', 'al-naseem', 'al-rawdah', 'al-munsiyah'].map((neighborhood) => ({
+      url: `${baseUrl}/riyadh/${neighborhood}`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly' as const,
+      priority: 0.6,
+    }))
   ];
 }
