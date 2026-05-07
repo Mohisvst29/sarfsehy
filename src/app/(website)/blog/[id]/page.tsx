@@ -52,14 +52,14 @@ export default async function BlogPost({ params }: { params: { id: string } }) {
     "author": [{
         "@type": "Organization",
         "name": "بيارات الرياض",
-        "url": "https://darub-alqimma.com"
+        "url": "https://www.byaratriyadh.com"
     }],
     "publisher": {
       "@type": "Organization",
       "name": "بيارات الرياض",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://darub-alqimma.com/icon.svg"
+        "url": "https://www.byaratriyadh.com/icon.svg"
       }
     }
   };

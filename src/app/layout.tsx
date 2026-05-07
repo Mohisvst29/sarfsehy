@@ -51,9 +51,9 @@ export default async function RootLayout({
               "@context": "https://schema.org",
               "@type": "LocalBusiness",
               "name": settings?.siteTitle || "بيارات الرياض",
-              "image": "https://darub-alqimma.com/icon.svg",
-              "@id": "https://darub-alqimma.com",
-              "url": "https://darub-alqimma.com",
+              "image": "https://www.byaratriyadh.com/icon.svg",
+              "@id": "https://www.byaratriyadh.com",
+              "url": "https://www.byaratriyadh.com",
               "telephone": settings?.phone || "+966583165533",
               "address": {
                 "@type": "PostalAddress",
@@ -83,9 +83,9 @@ export default async function RootLayout({
                 "closes": "23:59"
               },
               "sameAs": [
-                "https://twitter.com/darub-alqimma",
-                "https://facebook.com/darub-alqimma",
-                "https://instagram.com/darub-alqimma"
+                "https://twitter.com/byaratriyadh",
+                "https://facebook.com/byaratriyadh",
+                "https://instagram.com/byaratriyadh"
               ],
               "priceRange": "$$"
             })

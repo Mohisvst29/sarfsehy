@@ -32,13 +32,13 @@ export default async function Blog() {
     "@type": "Blog",
     "name": "مدونة بيارات الرياض",
     "description": "مدونة بيارات الرياض: نصائح وحلول لبيئة أنظف وصيانة الصرف الصحي والمحافظة على سلامة منزلك في الرياض.",
-    "url": "https://darub-alqimma.com/blog",
+    "url": "https://www.byaratriyadh.com/blog",
     "publisher": {
       "@type": "Organization",
       "name": "بيارات الرياض",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://darub-alqimma.com/icon.svg"
+        "url": "https://www.byaratriyadh.com/icon.svg"
       }
     },
     "blogPost": posts.map((p: any) => ({
@@ -47,7 +47,7 @@ export default async function Blog() {
       "datePublished": new Date(p.createdAt || Date.now()).toISOString(),
       "dateModified": new Date(p.updatedAt || p.createdAt || Date.now()).toISOString(),
       "description": p.excerpt,
-      "url": `https://darub-alqimma.com/blog/${p._id}`,
+      "url": `https://www.byaratriyadh.com/blog/${p._id}`,
       "image": p.image ? [p.image] : []
     }))
   };

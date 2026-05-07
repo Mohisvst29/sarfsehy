@@ -16,7 +16,7 @@ const SettingsSchema = new Schema({
   ctaLink: { type: String, default: "tel:+966583165533" },
   phone: { type: String, default: "+966583165533" },
   whatsapp: { type: String, default: "+966583165533" },
-  email: { type: String, default: "info@darub-alqimma.com" },
+  email: { type: String, default: "info@byaratriyadh.com" },
   address: { type: String, default: "الرياض، المملكة العربية السعودية" },
   mapEmbed: { type: String, default: "" },
   
