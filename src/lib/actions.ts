@@ -137,10 +137,11 @@ export async function deletePost(id: string) {
 }
 
 // --- Cloudinary Upload Action ---
+const cloudinaryUrl = process.env.CLOUDINARY_URL || "";
 cloudinary.config({
-  cloud_name: process.env.CLOUDINARY_URL?.split("@")[1],
-  api_key: process.env.CLOUDINARY_URL?.match(/\/\/(.*?):/)?.[1],
-  api_secret: process.env.CLOUDINARY_URL?.match(/:(.*?)@/)?.[1],
+  cloud_name: process.env.CLOUDINARY_CLOUD_NAME || cloudinaryUrl.split("@")[1],
+  api_key: process.env.CLOUDINARY_API_KEY || cloudinaryUrl.match(/\/\/(.*?):/)?.[1],
+  api_secret: process.env.CLOUDINARY_API_SECRET || cloudinaryUrl.match(/:([^:@]+)@/)?.[1],
 });
 
 export async function uploadImage(formData: FormData) {
