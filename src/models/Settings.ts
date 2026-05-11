@@ -12,6 +12,10 @@ const SettingsSchema = new Schema({
     heading: String,
     description: String
   }],
+  ourWorks: [{
+    image: String,
+    description: String
+  }],
   ctaText: { type: String, default: "اتصل بنا الآن" },
   ctaLink: { type: String, default: "tel:+966583165533" },
   phone: { type: String, default: "+966583165533" },

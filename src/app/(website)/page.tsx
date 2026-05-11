@@ -202,6 +202,34 @@ export default async function Home() {
 </div>
 </div>
 </section>
+{/* Our Works Section */}
+{settings.ourWorks && settings.ourWorks.length > 0 && (
+  <section className="py-24 max-w-7xl mx-auto px-8" data-aos="fade-up">
+    <div className="text-center mb-16 space-y-4">
+      <span className="text-secondary font-bold text-label-bold">أعمالنا السابقة</span>
+      <h2 className="font-headline-lg text-headline-lg text-primary">نماذج من أعمالنا</h2>
+      <div className="w-24 h-1 bg-secondary mx-auto rounded-full"></div>
+    </div>
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {settings.ourWorks.map((work: any, index: number) => (
+        <div key={index} className="bg-white rounded-2xl overflow-hidden border border-slate-100 shadow-sm group">
+          {work.image && (
+            <div className="h-64 relative overflow-hidden">
+              <Image fill className="object-cover group-hover:scale-105 transition-transform duration-500" alt={`عمل رقم ${index + 1}`} src={work.image} />
+            </div>
+          )}
+          {work.description && (
+            <div className="p-6">
+              <p className="font-body-md text-body-md text-on-surface-variant">
+                {work.description}
+              </p>
+            </div>
+          )}
+        </div>
+      ))}
+    </div>
+  </section>
+)}
 {/* Urgent CTA Section */}
 <section className="py-20" data-aos="zoom-in">
 <div className="max-w-5xl mx-auto px-8">

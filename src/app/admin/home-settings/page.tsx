@@ -178,6 +178,70 @@ export default function HomeSettingsPage() {
           )}
         </div>
 
+        {/* Our Works Section */}
+        <div className="space-y-4">
+          <div className="flex justify-between items-center border-b border-outline-variant pb-2">
+            <h3 className="text-headline-md text-secondary">أعمالنا (Our Works)</h3>
+            <button type="button" onClick={() => setSettings({...settings, ourWorks: [...(settings.ourWorks || []), { image: "", description: "" }]})} className="bg-secondary-container text-on-secondary-container px-4 py-1 rounded-lg text-sm font-bold flex items-center gap-1 hover:opacity-90">
+              <span className="material-symbols-outlined text-sm">add</span>
+              إضافة عمل
+            </button>
+          </div>
+
+          {(settings.ourWorks || []).map((work: any, index: number) => (
+            <div key={index} className="p-4 border border-outline-variant rounded-xl bg-white space-y-4 relative">
+              <button type="button" onClick={() => {
+                const newWorks = [...settings.ourWorks];
+                newWorks.splice(index, 1);
+                setSettings({...settings, ourWorks: newWorks});
+              }} className="absolute top-4 left-4 text-error hover:bg-error/10 p-1 rounded-lg transition-colors">
+                <span className="material-symbols-outlined">delete</span>
+              </button>
+              
+              <div className="font-bold text-primary mb-2">العمل #{index + 1}</div>
+              
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div className="space-y-2">
+                  <label className="font-label-bold">صورة العمل</label>
+                  <div className="flex items-center gap-2">
+                    <input type="file" accept="image/*" onChange={async (e) => {
+                      const file = e.target.files?.[0];
+                      if (!file) return;
+                      const formData = new FormData();
+                      formData.append("file", file);
+                      try {
+                        const res: any = await uploadImage(formData);
+                        const newWorks = [...settings.ourWorks];
+                        newWorks[index].image = res.url;
+                        setSettings({...settings, ourWorks: newWorks});
+                      } catch (err) {
+                        alert("حدث خطأ في رفع الصورة");
+                      }
+                    }} className="w-full p-2 rounded-lg border border-outline-variant outline-none focus:border-primary text-sm" />
+                  </div>
+                  {work.image && <img src={work.image} alt="Preview" className="w-full h-32 object-cover rounded-lg border border-outline-variant" />}
+                </div>
+                
+                <div className="space-y-4">
+                  <div className="space-y-1">
+                    <label className="font-label-bold text-sm">وصف العمل (نص بسيط)</label>
+                    <textarea className="w-full p-2 rounded-lg border border-outline-variant outline-none focus:border-primary h-32" value={work.description || ""} onChange={(e) => {
+                      const newWorks = [...settings.ourWorks];
+                      newWorks[index].description = e.target.value;
+                      setSettings({...settings, ourWorks: newWorks});
+                    }} />
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+          {(!settings.ourWorks || settings.ourWorks.length === 0) && (
+            <div className="text-center p-8 bg-surface-container-low rounded-xl border border-dashed border-outline-variant text-on-surface-variant">
+              لا توجد أعمال مضافة حالياً.
+            </div>
+          )}
+        </div>
+
         {/* Global SEO / Fallback Section */}
         <div className="space-y-4 mt-8 pt-8 border-t border-outline-variant">
           <h3 className="text-headline-md text-secondary border-b border-outline-variant pb-2">نصوص الموقع الافتراضية (ومحركات البحث)</h3>
